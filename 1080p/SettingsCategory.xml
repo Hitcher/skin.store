@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<!-- settingscategory -->
+	<backgroundcolor>BackgroundColor</backgroundcolor>
+	<defaultcontrol always="true">50</defaultcontrol>
+
+	<controls>
+
+		<!-- Hidden Button to focus grouplist 3 -->
+		<control type="button" id="50">
+			<include>HiddenControl</include>
+			<onfocus>SetFocus(3)</onfocus>
+		</control>
+
+		<!-- Global Background -->
+		<include>GlobalBackground</include>
+
+		<!-- Main Menu -->
+		<include>IncludeMainMenu</include>
+
+		<!-- Controls -->
+		<control type="group">
+			<animation type="WindowOpen">
+				<effect type="fade" start="0" end="100" time="600" />
+				<effect type="zoom" center="auto" start="94" end="100" time="400" />
+			</animation>
+			<animation type="WindowClose">
+				<effect type="fade" start="100" end="0" time="400" />
+				<effect type="zoom" center="auto" start="100" end="94" time="400" />
+			</animation>
+			<animation type="Conditional" condition="Control.HasFocus(200) | Control.HasFocus(300)">
+				<effect type="zoom" center="1920,154" start="100" end="76" time="200" />
+			</animation>
+			<animation type="Conditional" condition="Control.HasFocus(900)">
+				<effect type="zoom" center="0,154" start="100" end="76" time="200" />
+			</animation>
+
+			<!-- Grouplist Background Image -->
+			<control type="image">
+				<posx>150</posx>
+				<posy>162</posy>
+				<width>1620</width>
+				<height>812</height>
+				<texture border="3">global/Panel.png</texture>
+			</control>
+
+			<!-- Category Area -->
+			<control type="grouplist" id="3">
+				<posx>164</posx>
+				<posy>176</posy>
+				<width>354</width>
+				<height>784</height>
+				<itemgap>8</itemgap>
+				<onleft>200</onleft>
+				<onright>5</onright>
+				<onup>noop</onup>
+				<ondown>noop</ondown>
+				<orientation>vertical</orientation>
+			</control>
+
+			<!-- Control Area -->
+			<control type="grouplist" id="5">
+				<posx>526</posx>
+				<posy>176</posy>
+				<width>1228</width>
+				<height>784</height>
+				<itemgap>8</itemgap>
+				<onleft>3</onleft>
+				<onright>900</onright>
+				<onup>noop</onup>
+				<ondown>noop</ondown>
+				<orientation>vertical</orientation>
+			</control>
+
+		</control>
+
+		<!-- Default Button -->
+		<control type="button" id="7">
+			<align>left</align>
+		</control>
+
+		<!-- Default Radio Button -->
+		<control type="radiobutton" id="8">
+			<radioposx>1155</radioposx>
+			<align>left</align>
+		</control>
+
+		<!-- Default Spin Control -->
+		<control type="spincontrolex" id="9">
+			<align>left</align>
+		</control>
+
+		<!-- Default Category Button -->
+		<control type="button" id="10">
+			<width>354</width>
+			<align>left</align>
+		</control>
+
+		<!-- Sub Menu -->
+		<control type="group">
+			<posx>1920</posx>
+			<animation type="Conditional" condition="Control.HasFocus(900)">
+				<effect type="slide" end="-460,0" time="200" tween="linear" easing="inout" />
+			</animation>
+			<animation type="WindowClose" condition="Control.HasFocus(900)">
+				<effect type="slide" end="460,0" time="200" tween="linear" easing="inout" />
+			</animation>
+
+			<!-- Side Bar -->
+			<control type="image">
+				<width>462</width>
+				<height>MaxHeight</height>
+				<texture border="2,60,2,60">global/BarVertical.png</texture>
+			</control>
+
+			<!-- Options Menu -->
+			<control type="fixedlist" id="900">
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>460</width>
+				<height>1080</height>
+				<onup>noop</onup>
+				<ondown>noop</ondown>
+				<onleft>50</onleft>
+				<onright>noop</onright>
+				<focusposition>4</focusposition>
+				<orientation>vertical</orientation>
+				<defaultcontrol>1</defaultcontrol>
+				<scrolltime tween="sine" easing="out">320</scrolltime>
+
+				<itemlayout width="460" height="70">
+
+					<control type="label">
+						<posx>104</posx>
+						<posy>16</posy>
+						<width>316</width>
+						<height>33</height>
+						<font>Light33</font>
+						<info>ListItem.Label</info>
+					</control>
+
+				</itemlayout>
+
+				<focusedlayout width="460" height="70">
+
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>460</width>
+						<height>70</height>
+						<texture border="6">global/MenuButtonFO.png</texture>
+					</control>
+
+					<control type="label">
+						<posx>104</posx>
+						<posy>16</posy>
+						<width>316</width>
+						<height>33</height>
+						<font>Light33</font>
+						<textcolor>Black</textcolor>
+						<info>ListItem.Label</info>
+					</control>
+
+				</focusedlayout>
+
+				<content>
+					<!-- Appearance -->
+					<item id="1">
+						<label>480</label>
+						<onclick>ActivateWindow(appearancesettings)</onclick>
+					</item>
+					<!-- Videos -->
+					<item id="2">
+						<label>3</label>
+						<onclick>ActivateWindow(videossettings)</onclick>
+					</item>
+					<!-- Music -->
+					<item id="3">
+						<label>2</label>
+						<onclick>ActivateWindow(musicsettings)</onclick>
+					</item>
+					<!-- Pictures -->
+					<item id="4">
+						<label>1</label>
+						<onclick>ActivateWindow(picturessettings)</onclick>
+					</item>
+					<!-- Add-ons -->
+					<item id="5">
+						<label>24001</label>
+						<onclick>ActivateWindow(addonbrowser)</onclick>
+					</item>
+					<!-- Weather -->
+					<item id="6">
+						<label>8</label>
+						<onclick>ActivateWindow(weathersettings)</onclick>
+					</item>
+					<!-- PVR -->
+					<item id="7">
+						<label>32007</label>
+						<onclick>ActivateWindow(pvrsettings)</onclick>
+					</item>
+					<!-- Network -->
+					<item id="8">
+						<label>13279</label>
+						<onclick>ActivateWindow(networksettings)</onclick>
+					</item>
+					<!-- System -->
+					<item id="9">
+						<label>13000</label>
+						<onclick>ActivateWindow(systemsettings)</onclick>
+					</item>
+					<!-- Profiles -->
+					<item id="10">
+						<label>13200</label>
+						<onclick>ActivateWindow(Profiles)</onclick>
+					</item>
+					<!-- File manager -->
+					<item id="11">
+						<label>7</label>
+						<onclick>ActivateWindow(filemanager)</onclick>
+					</item>
+					<!-- System Info -->
+					<item id="12">
+						<label>10511</label>
+						<onclick>ActivateWindow(systeminfo)</onclick>
+					</item>
+				</content>
+
+			</control>
+
+		</control>
+
+		<!-- Top Bar -->
+		<include>GlobalTopBar</include>
+
+	</controls>
+
+</window>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<!-- volumebar -->
+	<defaultcontrol always="true">-</defaultcontrol>
+
+	<controls>
+
+		<control type="group">
+			<posx>560</posx>
+			<include>VisibleFadeAnimation</include>
+			<visible>!Window.IsVisible(infodialog)</visible>
+
+			<!-- Background -->
+			<control type="image">
+				<posx>0</posx>
+				<width>800</width>
+				<height>88</height>
+				<texture>global/Black.png</texture>
+			</control>
+
+			<!-- Volume Control -->
+			<control type="progress" id="1">
+				<posx>200</posx>
+				<posy>-8</posy>
+				<width>400</width>
+				<height>8</height>
+				<info>Player.Volume</info>
+				<visible>!player.passthrough</visible>
+			</control>
+
+			<!-- Volume Label -->
+			<control type="label">
+				<posy>18</posy>
+				<width>800</width>
+				<height>24</height>
+				<align>center</align>
+				<font>Regular28</font>
+				<textcolor>White</textcolor>
+				<label>$LOCALIZE[13376] - $INFO[Control.Getlabel(1),,%]</label>
+				<visible>!player.passthrough</visible>
+			</control>
+
+			<!-- Passthrough Label -->
+			<control type="label">
+				<posy>18</posy>
+				<width>800</width>
+				<height>24</height>
+				<align>center</align>
+				<font>Regular28</font>
+				<textcolor>White</textcolor>
+				<label>29802</label>
+				<visible>player.passthrough</visible>
+			</control>
+
+		</control>
+
+	</controls>
+
+</window>

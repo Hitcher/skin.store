@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<!-- yesnodialog -->
+	<defaultcontrol always="true">10</defaultcontrol>
+	<allowoverlay>yes</allowoverlay>
+
+	<controls>
+
+		<include>GlobalOverlay</include>
+
+		<control type="group">
+			<posx>510</posx>
+			<posy>360</posy>
+
+			<control type="image">
+				<posx>-30</posx>
+				<posy>-30</posy>
+				<width>960</width>
+				<height>444</height>
+				<texture border="3">global/Panel.png</texture>
+			</control>
+
+			<control type="label" id="1">
+				<!-- Heading -->
+				<posx>15</posx>
+				<label>-</label>
+				<width>885</width>
+				<font>Light38</font>
+								<align>center</align>
+			</control>
+
+			<control type="label" id="2">
+				<!-- Line 1 -->
+				<posx>15</posx>
+				<posy>108</posy>
+				<label>-</label>
+				<width>885</width>
+				<scroll>true</scroll>
+			</control>
+
+			<control type="label" id="3">
+				<!-- Line 2 -->
+				<posx>15</posx>
+				<posy>156</posy>
+				<label>-</label>
+				<width>885</width>
+				<scroll>true</scroll>
+			</control>
+
+			<control type="label" id="4">
+				<!-- Line 3 -->
+				<posx>15</posx>
+				<posy>204</posy>
+				<label>-</label>
+				<width>885</width>
+				<scroll>true</scroll>
+			</control>
+
+			<control type="button" id="10">
+				<!-- No -->
+				<posx>150</posx>
+				<posy>285</posy>
+				<width>270</width>
+				<label>106</label>
+				<onleft>11</onleft>
+				<onright>11</onright>
+				<onup>10</onup>
+				<ondown>10</ondown>
+			</control>
+
+			<control type="button" id="11">
+				<!-- Yes -->
+				<posx>480</posx>
+				<posy>285</posy>
+				<width>270</width>
+				<label>107</label>
+				<onleft>10</onleft>
+				<onright>10</onright>
+				<onup>11</onup>
+				<ondown>11</ondown>
+			</control>
+
+		</control>
+
+	</controls>
+
+</window>

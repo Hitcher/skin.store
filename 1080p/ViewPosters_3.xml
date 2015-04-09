@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+
+	<include name="ViewPosters">
+
+		<control type="group">
+			<visible>Control.IsVisible(51)</visible>
+			<animation type="WindowOpen">
+				<effect type="fade" start="0" end="100" time="400" delay="200" />
+			</animation>
+			<animation type="WindowClose">
+				<effect type="fade" start="100" end="0" time="200" />
+			</animation>
+			<animation type="Conditional" condition="Control.HasFocus(200) | Control.HasFocus(300)">
+				<effect type="zoom" center="1920,154" start="100" end="76" time="200" />
+			</animation>
+			<animation type="Conditional" condition="Control.HasFocus(900)">
+				<effect type="zoom" center="0,154" start="100" end="76" time="200" />
+			</animation>
+
+			<control type="panel" id="51">
+				<posx>154</posx>
+				<posy>0</posy>
+				<width>1620</width>
+				<height>2240</height>
+				<onleft>200</onleft>
+				<onright>60</onright>
+				<onup>51</onup>
+				<ondown>51</ondown>
+				<pagecontrol>60</pagecontrol>
+				<orientation>vertical</orientation>
+				<scrolltime tween="sine" easing="out">480</scrolltime>
+				<viewtype label="Posters">panel</viewtype>
+				<animation effect="slide" end="0,-912" time="480" tween="sine" easing="out" reversible="true" condition="Container(51).Row(1)" >Conditional</animation>
+
+				<itemlayout width="540" height="912">
+
+					<control type="image">
+						<posy>154</posy>
+						<width>532</width>
+						<height>800</height>
+						<bordersize>6</bordersize>
+						<aspectratio>scale</aspectratio>
+						<texture background="true">$VAR[Poster]</texture>
+					</control>
+
+					<control type="image">
+						<posy>872</posy>
+						<width>532</width>
+						<height>82</height>
+						<bordersize>6</bordersize>
+						<texture>global/Overlay.png</texture>
+					</control>
+
+					<control type="label">
+						<posy>872</posy>
+						<width>532</width>
+						<height>82</height>
+						<font>Light38</font>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+
+				</itemlayout>
+
+				<focusedlayout width="540" height="912">
+
+					<control type="image">
+						<posy>154</posy>
+						<width>532</width>
+						<height>800</height>
+						<bordersize>6</bordersize>
+						<aspectratio>scale</aspectratio>
+						<texture background="true">$VAR[Poster]</texture>
+						<bordertexture border="9">global/ItemFO.png</bordertexture>
+					</control>
+
+					<control type="image">
+						<posy>872</posy>
+						<width>532</width>
+						<height>82</height>
+						<bordersize>6</bordersize>
+						<texture>global/Overlay.png</texture>
+					</control>
+
+					<control type="label">
+						<posy>872</posy>
+						<width>532</width>
+						<height>82</height>
+						<font>Light38</font>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+
+				</focusedlayout>
+
+			</control>
+
+			<control type="scrollbar" id="60">
+				<posx>1785</posx>
+				<posy>160</posy>
+				<width>16</width>
+				<height>788</height>
+				<onleft>51</onleft>
+				<onright>900</onright>
+				<texturesliderbackground>global/Overlay.png</texturesliderbackground>
+				<texturesliderbar border="6">global/White.png</texturesliderbar>
+				<texturesliderbarfocus border="6">global/White.png</texturesliderbarfocus>
+				<textureslidernib>-</textureslidernib>
+				<textureslidernibfocus>-</textureslidernibfocus>
+				<visible allowhiddenfocus="true">Control.HasFocus(60) | Container.Scrolling</visible>
+				<animation effect="fade" start="0" end="100" time="400">Visible</animation>
+				<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+			</control>
+
+		</control>
+
+	</include>
+
+</includes>

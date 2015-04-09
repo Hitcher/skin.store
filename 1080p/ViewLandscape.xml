@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+
+	<include name="ViewLandscape">
+
+		<control type="group">
+			<visible>Control.IsVisible(52)</visible>
+
+			<control type="panel" id="52">
+				<posx>0</posx>
+				<posy>154</posy>
+				<width>1920</width>
+				<height>954</height>
+				<onleft>52</onleft>
+				<onright>52</onright>
+				<onup>200</onup>
+				<ondown>60</ondown>
+				<pagecontrol>60</pagecontrol>
+				<preloaditems>2</preloaditems>
+				<orientation>horizontal</orientation>
+				<scrolltime tween="sine" easing="out">480</scrolltime>
+				<viewtype label="32005">panel</viewtype>
+				<visible>Container.Content(movies) | Container.Content(tvshows) | Container.Content(episodes) | [Window.IsVisible(pictures) + !IsEmpty(Container.FolderName)]</visible>
+
+				<itemlayout width="712" height="403">
+
+					<control type="image">
+						<posx>252</posx>
+						<width>704</width>
+						<height>396</height>
+						<bordersize>6</bordersize>
+						<texture>global/Overlay.png</texture>
+					</control>
+
+					<control type="image">
+						<posx>252</posx>
+						<width>704</width>
+						<height>396</height>
+						<bordersize>6</bordersize>
+						<aspectratio>scale</aspectratio>
+						<texture background="true">$VAR[Landscape]</texture>
+					</control>
+
+					<control type="image">
+						<posx>252</posx>
+						<posy>718</posy>
+						<width>704</width>
+						<height>82</height>
+						<bordersize>6</bordersize>
+						<texture>global/Overlay.png</texture>
+					</control>
+
+					<control type="label">
+						<posx>252</posx>
+						<posy>718</posy>
+						<width>704</width>
+						<height>82</height>
+						<font>Light38</font>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+
+				</itemlayout>
+
+				<focusedlayout width="712" height="403">
+
+					<control type="image">
+						<posx>252</posx>
+						<width>704</width>
+						<height>396</height>
+						<bordersize>6</bordersize>
+						<aspectratio>scale</aspectratio>
+						<texture background="true">$VAR[Landscape]</texture>
+						<bordertexture border="9">global/ButtonFO.png</bordertexture>
+					</control>
+
+					<control type="image">
+						<posx>252</posx>
+						<posy>718</posy>
+						<width>704</width>
+						<height>82</height>
+						<bordersize>6</bordersize>
+						<texture>global/Overlay.png</texture>
+					</control>
+
+					<control type="label">
+						<posx>252</posx>
+						<posy>718</posy>
+						<width>704</width>
+						<height>82</height>
+						<font>Light38</font>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+
+				</focusedlayout>
+
+			</control>
+
+			<!-- Scrollbar -->
+			<control type="scrollbar" id="60">
+				<posx>248</posx>
+				<posy>974</posy>
+				<width>1424</width>
+				<height>8</height>
+				<onup>52</onup>
+				<ondown>900</ondown>
+				<orientation>horizontal</orientation>
+				<texturesliderbackground>global/Overlay.png</texturesliderbackground>
+				<texturesliderbar border="6">global/White.png</texturesliderbar>
+				<texturesliderbarfocus border="6">global/White.png</texturesliderbarfocus>
+				<textureslidernib>-</textureslidernib>
+				<textureslidernibfocus>-</textureslidernibfocus>
+				<visible allowhiddenfocus="true">Control.HasFocus(60) | Container.Scrolling</visible>
+				<animation effect="fade" start="0" end="100" time="400">Visible</animation>
+				<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+			</control>
+
+		</control>
+
+	</include>
+
+</includes>

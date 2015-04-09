@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<!-- playercontrols -->
+	<defaultcontrol always="true">403</defaultcontrol>
+	<allowoverlay>yes</allowoverlay>
+	<visible>Player.HasMedia + Window.IsActive(PlayerControls) + !VideoPlayer.IsFullscreen + !Window.IsActive(Visualisation)</visible>
+
+	<controls>
+
+		<include>GlobalOverlay</include>
+
+		<control type="group">
+			<posx>1260</posx>
+			<posy>240</posy>
+
+			<control type="image">
+				<posx>-30</posx>
+				<posy>-30</posy>
+				<width>720</width>
+				<height>684</height>
+				<texture border="3">global/Panel.png</texture>
+			</control>
+
+			<control type="grouplist" id="1">
+				<posx>15</posx>
+				<posy>60</posy>
+				<width>621</width>
+				<height>225</height>
+				<itemgap>8</itemgap>
+				<orientation>horizontal</orientation>
+				<onleft>1</onleft>
+				<onright>1</onright>
+				<onup>-</onup>
+				<ondown>2</ondown>
+
+				<control type="togglebutton" id="400">
+					<!-- Random -->
+					<width>75</width>
+					<height>75</height>
+					<label>-</label>
+					<texturefocus>OSD/RandomOffFO.png</texturefocus>
+					<texturenofocus>OSD/RandomOffNF.png</texturenofocus>
+					<usealttexture>Playlist.IsRandom</usealttexture>
+					<alttexturefocus>OSD/RandomOnFO.png</alttexturefocus>
+					<alttexturenofocus>OSD/RandomOnNF.png</alttexturenofocus>
+					<onclick>playercontrol(random)</onclick>
+				</control>
+
+				<control type="button" id="401">
+					<!-- Skip Back -->
+					<width>75</width>
+					<height>75</height>
+					<label>-</label>
+					<texturefocus>OSD/PrevTrackFO.png</texturefocus>
+					<texturenofocus>OSD/PrevTrackNF.png</texturenofocus>
+					<onclick>playercontrol(previous)</onclick>
+				</control>
+
+				<control type="button" id="402">
+					<!-- Rewind -->
+					<width>75</width>
+					<height>75</height>
+					<label>-</label>
+					<texturefocus>OSD/RewindFO.png</texturefocus>
+					<texturenofocus>OSD/RewindNF.png</texturenofocus>
+					<onclick>playercontrol(rewind)</onclick>
+				</control>
+
+				<control type="togglebutton" id="403">
+					<!-- Play/Pause -->
+					<width>75</width>
+					<height>75</height>
+					<label>-</label>
+					<texturefocus>OSD/PauseFO.png</texturefocus>
+					<texturenofocus>OSD/PauseNF.png</texturenofocus>
+					<usealttexture>Player.Paused | Player.Forwarding | Player.Rewinding</usealttexture>
+					<alttexturefocus>OSD/PlayFO.png</alttexturefocus>
+					<alttexturenofocus>OSD/PlayNF.png</alttexturenofocus>
+					<onclick>playercontrol(play)</onclick>
+				</control>
+
+				<control type="button" id="404">
+					<!-- Stop -->
+					<width>75</width>
+					<height>75</height>
+					<label>-</label>
+					<texturefocus>OSD/StopFO.png</texturefocus>
+					<texturenofocus>OSD/StopNF.png</texturenofocus>
+					<onclick>playercontrol(stop)</onclick>
+				</control>
+
+				<control type="button" id="405">
+					<!-- Forward -->
+					<width>75</width>
+					<height>75</height>
+					<label>-</label>
+					<texturefocus>OSD/ForwardFO.png</texturefocus>
+					<texturenofocus>OSD/ForwardNF.png</texturenofocus>
+					<onclick>playercontrol(forward)</onclick>
+				</control>
+
+				<control type="button" id="406">
+					<!-- Skip Forward -->
+					<width>75</width>
+					<height>75</height>
+					<label>-</label>
+					<texturefocus>OSD/NextTrackFO.png</texturefocus>
+					<texturenofocus>OSD/NextTrackNF.png</texturenofocus>
+					<onclick>playercontrol(next)</onclick>
+				</control>
+
+				<control type="button" id="407">
+					<!-- Repeat -->
+					<width>75</width>
+					<height>75</height>
+					<label>-</label>
+					<texturefocus>-</texturefocus>
+					<texturenofocus>-</texturenofocus>
+					<onclick>playercontrol(repeat)</onclick>
+				</control>
+
+			</control>
+
+			<control type="group">
+				<posx>558</posx>
+				<posy>60</posy>
+
+				<control type="image" id="408">
+					<width>75</width>
+					<height>75</height>
+					<texture>OSD/RepeatNF.png</texture>
+					<visible>!Playlist.IsRepeat + !Playlist.IsRepeatOne</visible>
+					<visible>!Control.HasFocus(407)</visible>
+				</control>
+
+				<control type="image" id="409">
+					<width>75</width>
+					<height>75</height>
+					<texture>OSD/RepeatFO.png</texture>
+					<visible>!Playlist.IsRepeat + !Playlist.IsRepeatOne</visible>
+					<visible>Control.HasFocus(407)</visible>
+				</control>
+
+				<control type="image" id="410">
+					<width>75</width>
+					<height>75</height>
+					<texture>OSD/RepeatOneNF.png</texture>
+					<visible>Playlist.IsRepeatOne</visible>
+					<visible>!Control.HasFocus(407)</visible>
+				</control>
+
+				<control type="image" id="411">
+					<width>75</width>
+					<height>75</height>
+					<texture>OSD/RepeatOneFO.png</texture>
+					<visible>Playlist.IsRepeatOne</visible>
+					<visible>Control.HasFocus(407)</visible>
+				</control>
+
+				<control type="image" id="412">
+					<width>75</width>
+					<height>75</height>
+					<texture>OSD/RepeatAllNF.png</texture>
+					<visible>Playlist.IsRepeat</visible>
+					<visible>!Control.HasFocus(407)</visible>
+				</control>
+
+				<control type="image" id="413">
+					<width>75</width>
+					<height>75</height>
+					<texture>OSD/RepeatAllFO.png</texture>
+					<visible>Playlist.IsRepeat</visible>
+					<visible>Control.HasFocus(407)</visible>
+				</control>
+
+			</control>
+
+			<control type="group">
+				<posx>15</posx>
+				<posy>165</posy>
+
+				<control type="group">
+					<visible>Player.HasVideo</visible>
+
+					<control type="image">
+						<width>621</width>
+						<height>348</height>
+						<texture>global/Overlay.png</texture>
+						<bordertexture border="9">global/ButtonNF.png</bordertexture>
+						<bordersize>9</bordersize>
+					</control>
+
+					<control type="button" id="2">
+						<width>621</width>
+						<height>348</height>
+						<texture>global/Overlay.png</texture>
+						<bordertexture border="9">global/ButtonFO.png</bordertexture>
+						<bordersize>9</bordersize>
+						<onleft>-</onleft>
+						<onright>-</onright>
+						<onup>1</onup>
+						<ondown>-</ondown>
+						<onclick>fullscreen</onclick>
+						<visible allowhiddenfocus="true">Control.HasFocus(2)</visible>
+					</control>
+
+					<control type="videowindow">
+						<!-- video -->
+						<posx>9</posx>
+						<posy>9</posy>
+						<width>603</width>
+						<height>330</height>
+					</control>
+
+					<control type="label">
+						<!-- Now Playing Info -->
+						<posx>0</posx>
+						<posy>369</posy>
+						<width>621</width>
+						<label>$INFO[VideoPlayer.TVShowTitle,, - ]$INFO[VideoPlayer.Title]</label>
+						<scroll>true</scroll>
+					</control>
+
+				</control>
+
+				<control type="group">
+					<visible>Player.HasAudio</visible>
+
+					<control type="image">
+						<posx>81</posx>
+						<width>458</width>
+						<height>347</height>
+						<texture>global/Overlay.png</texture>
+						<bordertexture border="9">global/ButtonNF.png</bordertexture>
+						<bordersize>9</bordersize>
+					</control>
+
+					<control type="button" id="2">
+						<posx>81</posx>
+						<width>458</width>
+						<height>347</height>
+						<texture>global/Overlay.png</texture>
+						<bordertexture border="9">global/ButtonFO.png</bordertexture>
+						<bordersize>9</bordersize>
+						<onleft>-</onleft>
+						<onright>-</onright>
+						<onup>1</onup>
+						<ondown>-</ondown>
+						<onclick>fullscreen</onclick>
+						<visible allowhiddenfocus="true">Control.HasFocus(2)</visible>
+					</control>
+
+					<control type="visualisation">
+						<!-- visualisation -->
+						<posx>90</posx>
+						<posy>9</posy>
+						<width>438</width>
+						<height>329</height>
+					</control>
+
+					<control type="label">
+						<!-- Now Playing Info -->
+						<posx>0</posx>
+						<posy>369</posy>
+						<width>621</width>
+						<label>$INFO[MusicPlayer.Title]$INFO[MusicPlayer.Artist, - ,]</label>
+						<scroll>true</scroll>
+					</control>
+
+				</control>
+
+			</control>
+
+		</control>
+
+	</controls>
+
+</window>

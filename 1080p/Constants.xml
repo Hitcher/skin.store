@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+	
+	<constant name="MaxWidth">1920</constant>
+	<constant name="MaxHeight">1080</constant>
+	<constant name="MidPosX">960</constant>
+	<constant name="MidPosY">540</constant>
+	<constant name="PanelHeight">852</constant>
+	<constant name="PanelOffset">-426</constant>
+	
+</includes>

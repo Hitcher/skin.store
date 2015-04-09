@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<!-- favourites -->
+	<defaultcontrol always="true">450</defaultcontrol>
+	<onload>ClearProperty(favourite.1.name,home)</onload>
+	<onload>ClearProperty(favourite.2.name,home)</onload>
+	<onload>ClearProperty(favourite.3.name,home)</onload>
+	<onload>ClearProperty(favourite.4.name,home)</onload>
+	<onload>ClearProperty(favourite.5.name,home)</onload>
+	<onload>ClearProperty(favourite.6.name,home)</onload>
+	<onload>ClearProperty(favourite.7.name,home)</onload>
+	<onload>ClearProperty(favourite.8.name,home)</onload>
+	<onload>ClearProperty(favourite.9.name,home)</onload>
+	<onload>ClearProperty(favourite.10.name,home)</onload>
+	<onload>ClearProperty(favourite.11.name,home)</onload>
+	<onload>ClearProperty(favourite.12.name,home)</onload>
+	<onload>ClearProperty(favourite.13.name,home)</onload>
+	<onload>ClearProperty(favourite.14.name,home)</onload>
+	<onload>ClearProperty(favourite.15.name,home)</onload>
+	<onload>ClearProperty(favourite.16.name,home)</onload>
+	<onload>ClearProperty(favourite.17.name,home)</onload>
+	<onload>ClearProperty(favourite.18.name,home)</onload>
+	<onload>ClearProperty(favourite.19.name,home)</onload>
+	<onload>ClearProperty(favourite.20.name,home)</onload>
+	<onunload condition="!Skin.HasSetting(HideHomeFavourites)">RunScript(script.favourites,playlists=play)</onunload>
+
+	<controls>
+
+		<include>GlobalOverlay</include>
+
+		<control type="group">
+			<posx>450</posx>
+			<posy>135</posy>
+
+			<control type="image">
+				<posx>-30</posx>
+				<posy>-30</posy>
+				<width>1080</width>
+				<height>870</height>
+				<texture border="3">global/Panel.png</texture>
+			</control>
+
+			<control type="label" id="1">
+				<!-- header label -->
+				<posx>15</posx>
+				<width>990</width>
+				<align>center</align>
+				<font>Light38</font>
+				<label>1036</label>
+			</control>
+
+			<control type="list" id="450">
+				<posx>15</posx>
+				<posy>90</posy>
+				<width>660</width>
+				<height>690</height>
+				<onleft>450</onleft>
+				<onright>450</onright>
+				<onup>450</onup>
+				<ondown>450</ondown>
+
+				<itemlayout height="138">
+
+					<control type="image">
+						<width>660</width>
+						<height>135</height>
+						<texture border="9">global/ButtonNF.png</texture>
+					</control>
+
+					<control type="image">
+						<posx>12</posx>
+						<posy>12</posy>
+						<width>111</width>
+						<height>111</height>
+						<texture fallback="NoArt.png">$INFO[Listitem.Icon]</texture>
+					</control>
+
+					<control type="label">
+						<posx>150</posx>
+						<width>600</width>
+						<height>135</height>
+						<info>ListItem.Label</info>
+					</control>
+
+					<control type="label">
+						<posx>630</posx>
+						<width>600</width>
+						<height>135</height>
+						<align>right</align>
+						<info>ListItem.Label2</info>
+					</control>
+
+				</itemlayout>
+
+				<focusedlayout height="138">
+
+					<control type="image">
+						<width>660</width>
+						<height>135</height>
+						<texture border="9">global/ButtonFO.png</texture>
+					</control>
+
+					<control type="image">
+						<posx>12</posx>
+						<posy>12</posy>
+						<width>111</width>
+						<height>111</height>
+						<texture fallback="NoArt.png">$INFO[Listitem.Icon]</texture>
+					</control>
+
+					<control type="label">
+						<posx>150</posx>
+						<width>600</width>
+						<height>135</height>
+						<info>ListItem.Label</info>
+					</control>
+
+					<control type="label">
+						<posx>630</posx>
+						<width>600</width>
+						<height>135</height>
+						<align>right</align>
+						<info>ListItem.Label2</info>
+					</control>
+
+				</focusedlayout>
+
+			</control>
+
+			<control type="image">
+				<!-- Large Icon Image -->
+				<posx>705</posx>
+				<posy>327</posy>
+				<width>300</width>
+				<height>450</height>
+				<texture fallback="NoArt.png">$INFO[Container(450).ListItem.Icon]</texture>
+				<aspectratio align="center" aligny="bottom">keep</aspectratio>
+				<bordertexture border="9">global/ButtonFO.png</bordertexture>
+				<bordersize>8</bordersize>
+			</control>
+
+		</control>
+
+	</controls>
+
+</window>

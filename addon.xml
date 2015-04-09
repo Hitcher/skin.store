@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<addon id="skin.store" version="1.0.0" name="Store" provider-name="Hitcher">
+	<requires>
+		<import addon="xbmc.gui" version="4.0.0"/>
+	</requires>
+	<extension point="xbmc.gui.skin" defaultthemename="textures.xbt" debugging="false" effectslowdown="1.00">
+		<res width="1920" height="1080" aspect="16:9" default="true" folder="1080p" />
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<platform>all</platform>
+		<summary lang="en">PlayStation Store style skin for XBMC</summary>
+		<description lang="en">Store is based on the new PlayStation Store design</description>
+		<disclaimer lang="en">Built by Hitcher using Vanilla[CR]Textures courtesy of 'black</disclaimer>
+	</extension>
+</addon>

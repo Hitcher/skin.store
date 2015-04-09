@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<!-- shutdownmenu -->
+	<defaultcontrol always="true">3110</defaultcontrol>
+
+	<controls>
+
+		<!-- Background Image -->
+		<include>GlobalOverlay</include>
+
+		<control type="group">
+			<posx>747</posx>
+			<posy>0</posy>
+			<include>WindowFadeAnimation</include>
+
+			<control type="grouplist" id="3110">
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>426</width>
+				<height>MaxHeight</height>
+				<itemgap>0</itemgap>
+				<align>center</align>
+				<onleft>-</onleft>
+				<onright>-</onright>
+				<onup>3110</onup>
+				<ondown>3110</ondown>
+				<defaultcontrol always="true">3111</defaultcontrol>
+				<usecontrolcoords>true</usecontrolcoords>
+
+				<!-- Top Panel Image -->
+				<control type="image">
+					<width>426</width>
+					<height>10</height>
+					<aspectratio aligny="top">scale</aspectratio>
+					<texture border="3">global/Panel.png</texture>
+				</control>
+
+				<!-- Exit XBMC Button -->
+				<control type="group">
+					<width>426</width>
+					<height>88</height>
+					<visible>System.ShowExitButton</visible>
+
+					<control type="image">
+						<width>426</width>
+						<height>88</height>
+						<aspectratio aligny="center">scale</aspectratio>
+						<texture border="3">global/Panel.png</texture>
+					</control>
+
+					<control type="button" id="3111">
+						<posx>14</posx>
+						<posy>4</posy>
+						<label>13012</label>
+						<onup>noop</onup>
+						<ondown>3112</ondown>
+						<onclick>Quit()</onclick>
+					</control>
+
+				</control>
+
+				<!-- Master Mode Button -->
+				<control type="group">
+					<width>426</width>
+					<height>88</height>
+					<visible>System.HasLocks</visible>
+
+					<control type="image">
+						<width>426</width>
+						<height>88</height>
+						<aspectratio aligny="center">scale</aspectratio>
+						<texture border="3">global/Panel.png</texture>
+					</control>
+
+					<control type="button" id="3112">
+						<posx>14</posx>
+						<posy>4</posy>
+						<label>20046</label>
+						<altlabel>20045</altlabel>
+						<onup>3111</onup>
+						<ondown>3113</ondown>
+						<onclick>xbmc.mastermode</onclick>
+					</control>
+
+				</control>
+
+				<!-- LogOff Profile Button -->
+				<control type="group">
+					<width>426</width>
+					<height>88</height>
+					<visible>System.HasLoginScreen | IntegerGreaterThan(System.ProfileCount,1)</visible>
+					<visible>System.Loggedon</visible>
+
+					<control type="image">
+						<width>426</width>
+						<height>88</height>
+						<aspectratio aligny="center">scale</aspectratio>
+						<texture border="3">global/Panel.png</texture>
+					</control>
+
+					<control type="button" id="3113">
+						<posx>14</posx>
+						<posy>4</posy>
+						<include>SettingsLabel</include>
+						<label>$LOCALIZE[20126] $INFO[system.profilename]</label>
+						<onup>3112</onup>
+						<ondown>3114</ondown>
+						<onclick>Dialog.Close(all,true)</onclick>
+						<onclick>System.LogOff</onclick>
+					</control>
+
+				</control>
+
+				<!-- Cancel Shutdown Timer Button -->
+				<control type="group">
+					<width>426</width>
+					<height>88</height>
+					<visible>System.HasAlarm(shutdowntimer)</visible>
+
+					<control type="image">
+						<width>426</width>
+						<height>88</height>
+						<aspectratio aligny="center">scale</aspectratio>
+						<texture border="3">global/Panel.png</texture>
+					</control>
+
+					<control type="button" id="3114">
+						<posx>14</posx>
+						<posy>4</posy>
+						<label>20151</label>
+						<onup>3113</onup>
+						<ondown>3115</ondown>
+						<onclick>XBMC.CancelAlarm(shutdowntimer)</onclick>
+					</control>
+
+				</control>
+
+				<!-- Custom Shutdown Timer Button -->
+				<control type="group">
+					<width>426</width>
+					<height>88</height>
+					<visible>!System.HasAlarm(shutdowntimer)</visible>
+
+					<control type="image">
+						<width>426</width>
+						<height>88</height>
+						<aspectratio aligny="center">scale</aspectratio>
+						<texture border="3">global/Panel.png</texture>
+					</control>
+
+					<control type="button" id="3115">
+						<posx>14</posx>
+						<posy>4</posy>
+						<label>20144</label>
+						<onup>3114</onup>
+						<ondown>3116</ondown>
+						<onclick>XBMC.AlarmClock(shutdowntimer,XBMC.Shutdown())</onclick>
+					</control>
+
+				</control>
+
+				<!-- Shutdown Button -->
+				<control type="group">
+					<width>426</width>
+					<height>88</height>
+					<visible>System.CanPowerDown</visible>
+
+					<control type="image">
+						<width>426</width>
+						<height>88</height>
+						<aspectratio aligny="center">scale</aspectratio>
+						<texture border="3">global/Panel.png</texture>
+					</control>
+
+					<control type="button" id="3116">
+						<posx>14</posx>
+						<posy>4</posy>
+						<label>13005</label>
+						<onup>3115</onup>
+						<ondown>3117</ondown>
+						<onclick>ShutDown()</onclick>
+					</control>
+
+				</control>
+
+				<!-- Suspend Button -->
+				<control type="group">
+					<width>426</width>
+					<height>88</height>
+					<visible>System.CanSuspend</visible>
+
+					<control type="image">
+						<width>426</width>
+						<height>88</height>
+						<aspectratio aligny="center">scale</aspectratio>
+						<texture border="3">global/Panel.png</texture>
+					</control>
+
+					<control type="button" id="3117">
+						<posx>14</posx>
+						<posy>4</posy>
+						<label>13011</label>
+						<onup>3116</onup>
+						<ondown>3118</ondown>
+						<onclick>XBMC.Suspend()</onclick>
+					</control>
+
+				</control>
+
+				<!-- Reboot Button -->
+				<control type="group">
+					<width>426</width>
+					<height>88</height>
+					<visible>System.CanReboot</visible>
+
+					<control type="image">
+						<width>426</width>
+						<height>88</height>
+						<aspectratio aligny="center">scale</aspectratio>
+						<texture border="3">global/Panel.png</texture>
+					</control>
+
+					<control type="button" id="3118">
+						<posx>14</posx>
+						<posy>4</posy>
+						<label>13013</label>
+						<onup>3117</onup>
+						<ondown>3119</ondown>
+						<onclick>XBMC.Reset()</onclick>
+					</control>
+
+				</control>
+
+				<!-- Inhibit Idle Shutdown Button -->
+				<control type="group">
+					<width>426</width>
+					<height>88</height>
+					<visible>System.HasShutdown +!System.IsInhibit</visible>
+
+					<control type="image">
+						<width>426</width>
+						<height>88</height>
+						<aspectratio aligny="center">scale</aspectratio>
+						<texture border="3">global/Panel.png</texture>
+					</control>
+
+					<control type="button" id="3119">
+						<posx>14</posx>
+						<posy>4</posy>
+						<label>13017</label>
+						<onup>3118</onup>
+						<ondown>3120</ondown>
+						<onclick>XBMC.InhibitIdleShutdown(true)</onclick>
+					</control>
+
+				</control>
+
+				<!-- Allow Idle Shutdown Button -->
+				<control type="group">
+					<width>426</width>
+					<height>88</height>
+					<visible>System.HasShutdown + System.IsInhibit</visible>
+
+					<control type="image">
+						<width>426</width>
+						<height>88</height>
+						<aspectratio aligny="center">scale</aspectratio>
+						<texture border="3">global/Panel.png</texture>
+					</control>
+
+					<control type="button" id="3120">
+						<posx>14</posx>
+						<posy>4</posy>
+						<label>13018</label>
+						<onup>3119</onup>
+						<ondown>3121</ondown>
+						<onclick>XBMC.InhibitIdleShutdown(false)</onclick>
+					</control>
+
+				</control>
+
+				<!-- Open Player Controls Button -->
+				<control type="group">
+					<width>426</width>
+					<height>88</height>
+					<visible>Player.HasMedia</visible>
+
+					<control type="image">
+						<width>426</width>
+						<height>88</height>
+						<aspectratio aligny="center">scale</aspectratio>
+						<texture border="3">global/Panel.png</texture>
+					</control>
+
+					<control type="button" id="3121">
+						<posx>14</posx>
+						<posy>4</posy>
+						<label>31015</label>
+						<onup>3120</onup>
+						<ondown>noop</ondown>
+						<onclick>ActivateWindow(playercontrols)</onclick>
+					</control>
+
+				</control>
+
+				<control type="group">
+					<width>426</width>
+					<height>88</height>
+					<visible>System.HasAlarm(shutdowntimer)</visible>
+
+					<control type="image">
+						<width>426</width>
+						<height>88</height>
+						<aspectratio aligny="center">scale</aspectratio>
+						<texture border="3">global/Panel.png</texture>
+					</control>
+
+					<control type="label">
+						<!-- Alarm Time -->
+						<posx>14</posx>
+						<posy>4</posy>
+						<align>center</align>
+						<aligny>center</aligny>
+						<label>$LOCALIZE[13005] [B]$INFO[System.Alarmpos,T-][/B]</label>
+					</control>
+
+				</control>
+
+				<control type="image">
+					<width>426</width>
+					<height>10</height>
+					<aspectratio aligny="bottom">scale</aspectratio>
+					<texture border="3">global/Panel.png</texture>
+				</control>
+
+			</control>
+
+		</control>
+
+	</controls>
+
+</window>

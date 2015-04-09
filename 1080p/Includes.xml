@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+
+	<include file="Constants.xml" />
+	<include file="Defaults.xml" />
+	<include file="IncludeMainMenu.xml" />
+	<include file="ViewList.xml" />
+	<include file="ViewPosters.xml" />
+	<include file="ViewLandscape.xml" />
+	<include file="Variables.xml" />
+
+	<include name="HiddenControl">
+		<posx>-10</posx>
+		<posy>-10</posy>
+		<width>1</width>
+		<height>1</height>
+		<font>-</font>
+		<texture>-</texture>
+		<texturefocus>-</texturefocus>
+		<texturenofocus>-</texturenofocus>
+		<alttexturenofocus>-</alttexturenofocus>
+		<alttexturefocus>-</alttexturefocus>
+		<textureradiofocus>-</textureradiofocus>
+		<textureradionofocus>-</textureradionofocus>
+	</include>
+
+	<include name="DimensionsFullscreen">
+		<posx>0</posx>
+		<posy>0</posy>
+		<width>MaxWidth</width>
+		<height>MaxHeight</height>
+	</include>
+
+	<include name="GlobalOverlay">
+		<control type="image">
+			<include>DimensionsFullscreen</include>
+			<texture>global/Overlay.png</texture>
+		</control>
+		<animation type="WindowOpen">
+			<effect type="fade" start="0" end="100" time="200" />
+		</animation>
+		<animation type="WindowClose">
+			<effect type="fade" start="100" end="0" time="200" />
+		</animation>
+	</include>
+
+	<include name="GlobalBackground">
+		<control type="image">
+			<include>DimensionsFullscreen</include>
+			<texture>$VAR[BackgroundImage]</texture>
+			<animation type="WindowOpen">
+				<effect type="zoom" center="auto" start="100" end="106" time="200" />
+			</animation>
+			<animation type="WindowClose">
+				<effect type="zoom" center="auto" start="106" end="100" time="200" />
+			</animation>
+		</control>
+	</include>
+
+	<include name="WindowFadeAnimation">
+		<animation type="WindowOpen">
+			<effect type="fade" start="0" end="100" time="200" />
+		</animation>
+		<animation type="WindowClose">
+			<effect type="fade" start="100" end="0" time="200" />
+		</animation>
+	</include>
+
+	<include name="DialogFadeAnimation">
+		<animation type="WindowOpen">
+			<effect type="fade" start="0" end="100" time="200" />
+			<effect type="zoom" center="auto" start="94" end="100" time="200" />
+		</animation>
+		<animation type="WindowClose">
+			<effect type="fade" start="100" end="0" time="200" />
+			<effect type="zoom" center="auto" start="100" end="106" time="200" />
+		</animation>
+	</include>
+
+	<include name="VisibleFadeAnimation">
+		<animation type="Visible">
+			<effect type="fade" start="0" end="100" time="200" />
+		</animation>
+		<animation type="Hidden">
+			<effect type="fade" start="100" end="0" time="200" />
+		</animation>
+	</include>
+
+	<include name="FanartBackground">
+		<control type="image">
+			<include>DimensionsFullscreen</include>
+			<fadetime>400</fadetime>
+			<texture background="true">$INFO[ListItem.Art(fanart)]</texture>
+			<animation type="WindowOpen">
+				<effect type="fade" start="0" end="100" time="200" />
+				<effect type="zoom" center="auto" start="100" end="106" time="200" />
+			</animation>
+			<animation type="WindowClose">
+				<effect type="fade" start="100" end="0" time="200" />
+				<effect type="zoom" center="auto" start="106" end="100" time="200" />
+			</animation>
+			<include>VisibleFadeAnimation</include>
+		</control>
+	</include>
+
+	<include name="PictureBackground">
+		<control type="image">
+			<include>DimensionsFullscreen</include>
+			<fadetime>400</fadetime>
+			<aspectratio>scale</aspectratio>
+			<texture background="true">$INFO[ListItem.FileNameAndPath]</texture>
+			<animation type="WindowOpen">
+				<effect type="fade" start="0" end="100" time="200" />
+				<effect type="zoom" center="auto" start="100" end="106" time="200" />
+			</animation>
+			<animation type="WindowClose">
+				<effect type="fade" start="100" end="0" time="200" />
+				<effect type="zoom" center="auto" start="106" end="100" time="200" />
+			</animation>
+			<include>VisibleFadeAnimation</include>
+		</control>
+	</include>
+
+	<include name="GlobalTopBar">
+
+		<!-- Top Diffuse -->
+		<control type="image">
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>MaxWidth</width>
+			<height>202</height>
+			<texture>global/DiffuseVertical.png</texture>
+		</control>
+
+		<control type="group">
+			<posx>31</posx>
+			<posy>24</posy>
+
+			<!-- Clock Back -->
+			<control type="image">
+				<width>51</width>
+				<height>51</height>
+				<colordiffuse>White</colordiffuse>
+				<texture>clock/clock_panel.png</texture>
+			</control>
+
+			<!-- Clock Hour -->
+			<control type="image">
+				<width>51</width>
+				<height>51</height>
+				<colordiffuse>White</colordiffuse>
+				<texture>clock/hours/$INFO[System.Time(hh)].png</texture>
+				<animation effect="rotate" center="auto" end="-15" condition="IntegerGreaterThan(System.Time(mm),29)">Conditional</animation>
+			</control>
+
+			<!-- Clock Minute -->
+			<control type="image">
+				<width>51</width>
+				<height>51</height>
+				<colordiffuse>White</colordiffuse>
+				<texture>clock/minutes/$INFO[System.Time(mm)].png</texture>
+			</control>
+
+		</control>
+
+		<!-- Time -->
+		<control type="label">
+			<posx>104</posx>
+			<posy>31</posy>
+			<width>400</width>
+			<height>42</height>
+			<font>Light38</font>
+			<label>$INFO[System.Time]</label>
+		</control>
+
+		<control type="grouplist">
+			<posx>616</posx>
+			<posy>31</posy>
+			<width>1200</width>
+			<height>50</height>
+			<align>right</align>
+			<orientation>horizontal</orientation>
+
+			<!-- Item Count -->
+			<control type="label">
+				<width min="1" max="800">Auto</width>
+				<height>38</height>
+				<font>Light38</font>
+				<label>$VAR[ContentType]</label>
+			</control>
+
+			<!-- Item Count -->
+			<control type="label">
+				<width min="1" max="200">Auto</width>
+				<height>38</height>
+				<font>Light38</font>
+				<label>$INFO[Container.NumItems, (,)]</label>
+			</control>
+
+		</control>
+
+	</include>
+
+</includes>

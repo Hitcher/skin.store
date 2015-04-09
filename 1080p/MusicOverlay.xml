@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<!-- musicoverlay -->
+	<include>WindowFadeAnimation</include>
+
+	<controls>
+
+		<control type="grouplist">
+			<visible>!Window.IsVisible(3000) + !Window.IsVisible(fullscreenvideo) + !Window.IsVisible(visualisation) + !Window.IsVisible(screencalibration) + !Window.IsVisible(screensaver) + !Window.IsVisible(slideshow)</visible>
+			<posx>30</posx>
+			<posy>42r</posy>
+			<width>1048</width>
+			<height>42</height>
+			<align>left</align>
+			<itemgap>0</itemgap>
+			<orientation>horizontal</orientation>
+			<usecontrolcoords>true</usecontrolcoords>
+
+			<!-- Now Playing Label -->
+			<control type="label">
+				<posy>3</posy>
+				<width min="10" max="200">auto</width>
+				<height>24</height>
+				<font>Regular24</font>
+				<textcolor>Grey</textcolor>
+				<label>$LOCALIZE[13350] </label>
+			</control>
+
+			<!-- Now Playing Info -->
+			<control type="label">
+				<posy>3</posy>
+				<width min="10" max="720">auto</width>
+				<height>24</height>
+				<font>Regular24</font>
+				<textcolor>White</textcolor>
+				<label>$INFO[MusicPlayer.Artist,, - ]$INFO[MusicPlayer.Title]</label>
+			</control>
+
+			<!-- Bottom Diffuse -->
+			<control type="image">
+				<width>128</width>
+				<height>42</height>
+				<texture border="0,0,118,0">global/DiffuseHorizontal.png</texture>
+			</control>
+
+		</control>
+
+	</controls>
+
+</window>

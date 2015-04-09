@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<!-- mutebug -->
+	<include>WindowFadeAnimation</include>
+
+	<controls>
+
+		<control type="group">
+			<posx>560</posx>
+			<include>VisibleFadeAnimation</include>
+			<visible>!Window.IsVisible(extendedprogressdialog) + !Window.IsVisible(infodialog)</visible>
+
+			<!-- Background -->
+			<control type="image">
+				<posx>0</posx>
+				<width>800</width>
+				<height>88</height>
+				<texture>global/Black.png</texture>
+			</control>
+
+			<!-- Heading -->
+			<control type="label" id="901">
+				<posy>18</posy>
+				<width>800</width>
+				<height>24</height>
+				<align>center</align>
+				<font>Regular28</font>
+				<textcolor>White</textcolor>
+				<label>32003</label>
+			</control>
+
+		</control>
+
+	</controls>
+
+</window>

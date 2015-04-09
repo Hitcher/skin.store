@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<!-- pointer -->
+
+	<controls>
+
+		<control type="image" id="1">
+			<!-- Pointer -->
+			<height>45</height>
+			<texture>mouse.png</texture>
+		</control>
+
+		<control type="image" id="2">
+			<!-- Pointer Focus -->
+			<height>45</height>
+			<texture>mouse.png</texture>
+		</control>
+
+		<control type="image" id="3">
+			<!-- Pointer Drag -->
+			<height>45</height>
+			<texture>mouse.png</texture>
+		</control>
+
+		<control type="image" id="4">
+			<!-- pointer_click -->
+			<height>45</height>
+			<texture>mouse.png</texture>
+		</control>
+
+	</controls>
+
+</window>

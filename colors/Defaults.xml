@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<colors>
+	<color name="Black">FF000000</color>
+	<color name="White">DDFFFFFF</color>
+	<color name="Grey">DDB0B0B0</color>
+	<color name="DisabledColour">FF7d0000</color>
+	<color name="Blue">FF0000FF</color>
+	<color name="Green">FF00FF00</color>
+	<color name="BackgroundColor">0</color>
+</colors>

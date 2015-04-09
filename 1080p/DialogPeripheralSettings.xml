@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<!-- peripheralsettings -->
+	<defaultcontrol>5</defaultcontrol>
+
+	<coordinates>
+		<system>1</system>
+		<posx>450</posx>
+		<posy>120</posy>
+	</coordinates>
+
+	<controls>
+
+		<control type="image">
+			<!-- background image -->
+			<posx>-30</posx>
+			<posy>-30</posy>
+			<width>1080</width>
+			<height>900</height>
+			<texture border="3">global/Panel.png</texture>
+		</control>
+
+		<control type="label">
+			<!-- header label -->
+			<posx>15</posx>
+			<posy>15</posy>
+			<width>990</width>
+			<align>center</align>
+			<font>Light38</font>
+			<label>5</label>
+		</control>
+
+		<control type="label" id="3">
+			<!-- No Settings Label -->
+			<posx>15</posx>
+			<posy>270</posy>
+			<width>990</width>
+			<align>center</align>
+			<label>35004</label>
+			<font>Light38</font>
+		</control>
+
+		<control type="grouplist" id="5">
+			<!-- control area -->
+			<posx>15</posx>
+			<posy>105</posy>
+			<width>990</width>
+			<height>528</height>
+			<itemgap>8</itemgap>
+			<onup>-</onup>
+			<ondown>9000</ondown>
+		</control>
+
+		<control type="button" id="7">
+			<!-- Default Button -->
+			<width>990</width>
+		</control>
+
+		<control type="radiobutton" id="8">
+			<!-- Default RadioButton -->
+			<width>990</width>
+			<align>left</align>
+		</control>
+
+		<control type="spincontrolex" id="9">
+			<!-- Default SpinControlex -->
+			<width>990</width>
+			<align>left</align>
+			<reverse>yes</reverse>
+		</control>
+
+		<control type="sliderex" id="10">
+			<!-- Default Slider -->
+			<width>990</width>
+			<align>left</align>
+		</control>
+
+		<control type="image" id="11">
+			<!-- separator image -->
+			<height>-2</height>
+			<texture>-</texture>
+		</control>
+
+		<control type="group" id="9000">
+			<posx>15</posx>
+			<posy>758</posy>
+
+			<control type="button" id="28">
+				<!-- OK Button -->
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>300</width>
+				<label>186</label>
+				<onleft>50</onleft>
+				<onright>29</onright>
+				<onup>5</onup>
+				<ondown>5</ondown>
+			</control>
+
+			<control type="button" id="29">
+				<!-- Cancel Button -->
+				<posx>345</posx>
+				<posy>0</posy>
+				<width>300</width>
+				<label>222</label>
+				<onleft>28</onleft>
+				<onright>50</onright>
+				<onup>5</onup>
+				<ondown>5</ondown>
+			</control>
+
+			<control type="button" id="50">
+				<!-- Defaults Button -->
+				<posx>690</posx>
+				<posy>0</posy>
+				<width>300</width>
+				<label>409</label>
+				<onleft>29</onleft>
+				<onright>28</onright>
+				<onup>5</onup>
+				<ondown>5</ondown>
+			</control>
+
+		</control>
+
+	</controls>
+
+</window>

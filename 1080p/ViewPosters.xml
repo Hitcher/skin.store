@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+
+	<include name="ViewPosters">
+
+		<control type="group">
+			<visible>Control.IsVisible(51)</visible>
+
+			<!-- List -->
+			<control type="fixedlist" id="51">
+				<posx>0</posx>
+				<posy>154</posy>
+				<width>1920</width>
+				<height>800</height>
+				<onleft>51</onleft>
+				<onright>51</onright>
+				<onup>200</onup>
+				<ondown>60</ondown>
+				<pagecontrol>60</pagecontrol>
+				<preloaditems>2</preloaditems>
+				<focusposition>1</focusposition>
+				<orientation>horizontal</orientation>
+				<scrolltime tween="sine" easing="out">480</scrolltime>
+				<viewtype label="32004">list</viewtype>
+				<visible>Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons)</visible>
+
+				<itemlayout width="540" height="800">
+
+					<control type="image">
+						<posx>154</posx>
+						<width>532</width>
+						<height>800</height>
+						<bordersize>6</bordersize>
+						<texture>global/Overlay.png</texture>
+					</control>
+
+					<control type="image">
+						<posx>154</posx>
+						<width>532</width>
+						<height>800</height>
+						<bordersize>6</bordersize>
+						<aspectratio>scale</aspectratio>
+						<texture background="true">$VAR[Poster]</texture>
+					</control>
+
+					<control type="image">
+						<posx>154</posx>
+						<posy>718</posy>
+						<width>532</width>
+						<height>82</height>
+						<bordersize>6</bordersize>
+						<texture>global/Overlay.png</texture>
+					</control>
+
+					<control type="label">
+						<posx>154</posx>
+						<posy>718</posy>
+						<width>532</width>
+						<height>82</height>
+						<font>Light38</font>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+
+				</itemlayout>
+
+				<focusedlayout width="540" height="800">
+
+					<control type="image">
+						<posx>154</posx>
+						<width>532</width>
+						<height>800</height>
+						<bordersize>6</bordersize>
+						<aspectratio>scale</aspectratio>
+						<texture background="true">$VAR[Poster]</texture>
+						<bordertexture border="9">global/ButtonFO.png</bordertexture>
+					</control>
+
+					<control type="image">
+						<posx>154</posx>
+						<posy>718</posy>
+						<width>532</width>
+						<height>82</height>
+						<bordersize>6</bordersize>
+						<texture>global/Overlay.png</texture>
+					</control>
+
+					<control type="label">
+						<posx>154</posx>
+						<posy>718</posy>
+						<width>532</width>
+						<height>82</height>
+						<font>Light38</font>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+
+				</focusedlayout>
+
+			</control>
+
+			<!-- Scrollbar -->
+			<control type="scrollbar" id="60">
+				<posx>154</posx>
+				<posy>974</posy>
+				<width>1612</width>
+				<height>8</height>
+				<onup>51</onup>
+				<ondown>900</ondown>
+				<orientation>horizontal</orientation>
+				<texturesliderbackground>global/Overlay.png</texturesliderbackground>
+				<texturesliderbar border="6">global/White.png</texturesliderbar>
+				<texturesliderbarfocus border="6">global/White.png</texturesliderbarfocus>
+				<textureslidernib>-</textureslidernib>
+				<textureslidernibfocus>-</textureslidernibfocus>
+				<visible allowhiddenfocus="true">Control.HasFocus(60) | Container.Scrolling</visible>
+				<animation effect="fade" start="0" end="100" time="400">Visible</animation>
+				<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+			</control>
+
+		</control>
+
+	</include>
+
+</includes>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<!-- infodialog -->
+	<defaultcontrol always="true">402</defaultcontrol>
+
+	<controls>
+
+		<control type="group">
+			<posx>1120</posx>
+			<include>WindowFadeAnimation</include>
+
+			<!-- Background -->
+			<control type="image">
+				<posx>0</posx>
+				<width>800</width>
+				<height>88</height>
+				<texture>global/Black.png</texture>
+			</control>
+
+			<!-- Deafult Icon -->
+			<control type="image" id="400">
+				<posx>82r</posx>
+				<posy>24</posy>
+				<width>51</width>
+				<height>51</height>
+				<colordiffuse>White</colordiffuse>
+				<texture>global/Default.png</texture>
+			</control>
+
+			<!-- Info Icon -->
+			<control type="image" id="403">
+				<posx>82r</posx>
+				<posy>24</posy>
+				<width>66</width>
+				<height>66</height>
+				<colordiffuse>White</colordiffuse>
+				<texture>global/DefaultInfo.png</texture>
+				<visible>false</visible>
+			</control>
+
+			<!-- Warning Icon -->
+			<control type="image" id="404">
+				<posx>82r</posx>
+				<posy>24</posy>
+				<width>66</width>
+				<height>66</height>
+				<colordiffuse>White</colordiffuse>
+				<texture>global/DefaultWarning.png</texture>
+				<visible>false</visible>
+			</control>
+
+			<!-- Error Icon -->
+			<control type="image" id="405">
+				<posx>82r</posx>
+				<posy>24</posy>
+				<width>66</width>
+				<height>66</height>
+				<colordiffuse>White</colordiffuse>
+				<texture>global/DefaultError.png</texture>
+				<visible>false</visible>
+			</control>
+
+			<!-- Heading -->
+			<control type="label" id="401">
+				<posx>94r</posx>
+				<posy>18</posy>
+				<width>686</width>
+				<height>24</height>
+				<align>right</align>
+				<font>Regular28</font>
+				<textcolor>Grey</textcolor>
+			</control>
+
+			<!-- Info Label -->
+			<control type="label" id="402">
+				<posx>94r</posx>
+				<posy>52</posy>
+				<width>686</width>
+				<align>right</align>
+				<height>24</height>
+				<font>Regular28</font>
+				<textcolor>White</textcolor>
+			</control>
+
+		</control>
+
+	</controls>
+
+</window>

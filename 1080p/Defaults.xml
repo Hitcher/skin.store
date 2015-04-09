@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+
+	<default type="label">
+		<posx>0</posx>
+		<posy>0</posy>
+		<label>-</label>
+		<width>398</width>
+		<height>80</height>
+		<align>left</align>
+		<aligny>center</aligny>
+		<font>Light30</font>
+		<textcolor>White</textcolor>
+		<focusedcolor>White</focusedcolor>
+		<selectedcolor>White</selectedcolor>
+		<disabledcolor>DisabledColour</disabledcolor>
+	</default>
+
+	<default type="fadelabel">
+		<posx>0</posx>
+		<posy>0</posy>
+		<width>398</width>
+		<height>80</height>
+		<label>-</label>
+		<align>left</align>
+		<aligny>center</aligny>
+		<font>Light30</font>
+		<textcolor>White</textcolor>
+		<focusedcolor>White</focusedcolor>
+		<selectedcolor>White</selectedcolor>
+		<disabledcolor>DisabledColour</disabledcolor>
+		<scrollout>false</scrollout>
+		<pauseatend>2000</pauseatend>
+	</default>
+
+	<default type="image">
+		<posx>0</posx>
+		<posy>0</posy>
+		<width>-</width>
+		<height>-</height>
+		<align>center</align>
+		<aligny>center</aligny>
+		<texture>-</texture>
+	</default>
+
+	<default type="button">
+		<posx>0</posx>
+		<posy>0</posy>
+		<width>398</width>
+		<height>80</height>
+		<align>center</align>
+		<aligny>center</aligny>
+		<font>Light30</font>
+		<label>-</label>
+		<textoffsetx>20</textoffsetx>
+		<textcolor>White</textcolor>
+		<focusedcolor>White</focusedcolor>
+		<disabledcolor>DisabledColour</disabledcolor>
+		<texturefocus border="9">global/ButtonFO.png</texturefocus>
+		<texturenofocus border="9">global/ButtonNF.png</texturenofocus>
+		<pulseonselect>false</pulseonselect>
+	</default>
+
+	<default type="togglebutton">
+		<posx>0</posx>
+		<posy>0</posy>
+		<width>398</width>
+		<height>80</height>
+		<label>-</label>
+		<textoffsetx>20</textoffsetx>
+		<font>Light30</font>
+		<textcolor>White</textcolor>
+		<focusedcolor>White</focusedcolor>
+		<disabledcolor>DisabledColour</disabledcolor>
+		<texturenofocus border="9">global/ButtonNF.png</texturenofocus>
+		<texturefocus border="9">global/ButtonFO.png</texturefocus>
+		<alttexturenofocus border="9">global/ButtonNF.png</alttexturenofocus>
+		<alttexturefocus border="9">global/ButtonFO.png</alttexturefocus>
+		<align>center</align>
+		<aligny>center</aligny>
+		<pulseonselect>false</pulseonselect>
+	</default>
+
+	<default type="radiobutton">
+		<posx>0</posx>
+		<posy>0</posy>
+		<width>398</width>
+		<height>80</height>
+		<align>center</align>
+		<aligny>center</aligny>
+		<font>Light30</font>
+		<label>-</label>
+		<textcolor>White</textcolor>
+		<focusedcolor>White</focusedcolor>
+		<disabledcolor>DisabledColour</disabledcolor>
+		<radiowidth>45</radiowidth>
+		<radioheight>45</radioheight>
+		<texturenofocus border="9">global/ButtonNF.png</texturenofocus>
+		<texturefocus border="9">global/ButtonFO.png</texturefocus>
+		<textureradiofocus>RadioButtonFO.png</textureradiofocus>
+		<textureradionofocus>RadioButtonNF.png</textureradionofocus>
+		<textoffsetx>20</textoffsetx>
+		<pulseonselect>false</pulseonselect>
+	</default>
+
+	<default type="spincontrolex">
+		<posx>0</posx>
+		<posy>0</posy>
+		<width>398</width>
+		<height>80</height>
+		<label>-</label>
+		<font>Light30</font>
+		<spinwidth>39</spinwidth>
+		<spinheight>39</spinheight>
+		<texturenofocus border="9">global/ButtonNF.png</texturenofocus>
+		<texturefocus border="9">global/ButtonFO.png</texturefocus>
+		<textureup>ArrowUpNF.png</textureup>
+		<texturedown>ArrowDownNF.png</texturedown>
+		<textureupfocus>ArrowUpFO.png</textureupfocus>
+		<texturedownfocus>ArrowDownFO.png</texturedownfocus>
+		<textcolor>White</textcolor>
+		<focusedcolor>White</focusedcolor>
+		<disabledcolor>DisabledColour</disabledcolor>
+		<textoffsetx>20</textoffsetx>
+		<align>left</align>
+		<aligny>center</aligny>
+		<reverse>yes</reverse>
+		<pulseonselect>false</pulseonselect>
+	</default>
+
+	<default type="spincontrol">
+		<posx>0</posx>
+		<posy>0</posy>
+		<height>23</height>
+		<width>23</width>
+		<spinwidth>39</spinwidth>
+		<spinheight>39</spinheight>
+		<textureup>ArrowUpNF.png</textureup>
+		<texturedown>ArrowDownNF.png</texturedown>
+		<textureupfocus>ArrowUpFO.png</textureupfocus>
+		<texturedownfocus>ArrowDownFO.png</texturedownfocus>
+		<font>Light30</font>
+		<textcolor>White</textcolor>
+		<focusedcolor>White</focusedcolor>
+		<disabledcolor>DisabledColour</disabledcolor>
+		<textoffsetx>20</textoffsetx>
+		<align>left</align>
+		<aligny>center</aligny>
+		<reverse>yes</reverse>
+		<pulseonselect>false</pulseonselect>
+	</default>
+
+	<default type="sliderex">
+		<posx>0</posx>
+		<posy>0</posy>
+		<height>80</height>
+		<width>398</width>
+		<texturenofocus border="9">global/ButtonNF.png</texturenofocus>
+		<texturefocus border="9">global/ButtonFO.png</texturefocus>
+		<sliderwidth>230</sliderwidth>
+		<sliderheight>23</sliderheight>
+		<texturesliderbar border="6">global/White.png</texturesliderbar>
+		<textureslidernib border="6">global/Progress.png</textureslidernib>
+		<textureslidernibfocus border="6">global/Progress.png</textureslidernibfocus>
+		<font>Light30</font>
+		<textcolor>White</textcolor>
+		<focusedcolor>White</focusedcolor>
+		<disabledcolor>DisabledColour</disabledcolor>
+		<textoffsetx>20</textoffsetx>
+		<textoffsety>0</textoffsety>
+	</default>
+
+	<default type="progress">
+		<posx>345</posx>
+		<posy>488</posy>
+		<texturebg border="6">global/White.png</texturebg>
+		<lefttexture>-</lefttexture>
+		<midtexture border="6">global/Progress.png</midtexture>
+		<righttexture>-</righttexture>
+		<overlaytexture>-</overlaytexture>
+	</default>
+
+	<default type="slider">
+		<posx>0</posx>
+		<posy>0</posy>
+		<width>360</width>
+		<height>23</height>
+		<texturefocus>-</texturefocus>
+		<texturenofocus>-</texturenofocus>
+		<texturesliderbar>OSD/slider_bg_2.png</texturesliderbar>
+		<textureslidernib border="6">global/Progress.png</textureslidernib>
+		<textureslidernibfocus border="6">global/Progress.png</textureslidernibfocus>
+	</default>
+
+	<default type="scrollbar">
+		<width>38</width>
+		<texturesliderbackground>global/Overlay.png</texturesliderbackground>
+		<texturesliderbar border="6">global/White.png</texturesliderbar>
+		<texturesliderbarfocus border="6">global/White.png</texturesliderbarfocus>
+		<textureslidernib>-</textureslidernib>
+		<textureslidernibfocus>-</textureslidernibfocus>
+		<showonepage>true</showonepage>
+		<orientation>vertical</orientation>
+	</default>
+
+	<default type="textbox">
+		<label>-</label>
+		<font>Light30</font>
+		<textcolor>white</textcolor>
+		<pagecontrol>61</pagecontrol>
+		<autoscroll>false</autoscroll>
+	</default>
+
+	<default type="grouplist">
+		<posx>15</posx>
+		<posy>60</posy>
+		<width>488</width>
+		<height>573</height>
+		<itemgap>8</itemgap>
+		<orientation>vertical</orientation>
+	</default>
+
+</includes>

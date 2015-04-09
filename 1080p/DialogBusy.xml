@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<!-- busydialog -->
+	<defaultcontrol always="true">-</defaultcontrol>
+	<include>WindowFadeAnimation</include>
+
+	<controls>
+
+		<control type="image">
+			<include>DimensionsFullscreen</include>
+			<texture>global/Overlay.png</texture>
+		</control>
+
+		<control type="multiimage">
+			<posx>927</posx>
+			<posy>521</posy>
+			<width>65</width>
+			<height>37</height>
+			<imagepath>busy</imagepath>
+			<fadetime>20</fadetime>
+			<timeperimage>40</timeperimage>
+			<pauseatend>120</pauseatend>
+		</control>
+
+	</controls>
+
+</window>

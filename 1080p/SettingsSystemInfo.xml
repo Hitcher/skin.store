@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<!-- systeminfo -->
+	<backgroundcolor>BackgroundColor</backgroundcolor>
+	<defaultcontrol always="true">50</defaultcontrol>
+
+	<controls>
+
+		<!-- Global Background -->
+		<include>GlobalBackground</include>
+
+		<!-- Main Menu -->
+		<include>IncludeMainMenu</include>
+
+		<!-- Controls -->
+		<control type="group">
+			<animation type="WindowOpen">
+				<effect type="fade" start="0" end="100" time="600" />
+				<effect type="zoom" center="auto" start="94" end="100" time="400" />
+			</animation>
+			<animation type="WindowClose">
+				<effect type="fade" start="100" end="0" time="400" />
+				<effect type="zoom" center="auto" start="100" end="94" time="400" />
+			</animation>
+			<animation type="Conditional" condition="Control.HasFocus(200) | Control.HasFocus(300)">
+				<effect type="zoom" center="1920,154" start="100" end="76" time="200" />
+			</animation>
+			<animation type="Conditional" condition="Control.HasFocus(900)">
+				<effect type="zoom" center="0,154" start="100" end="76" time="200" />
+			</animation>
+
+			<!-- Grouplist Background Image -->
+			<control type="image">
+				<posx>150</posx>
+				<posy>162</posy>
+				<width>1620</width>
+				<height>812</height>
+				<texture border="3">global/Panel.png</texture>
+			</control>
+
+			<control type="grouplist" id="50">
+				<posx>164</posx>
+				<posy>176</posy>
+				<width>354</width>
+				<height>784</height>
+				<itemgap>8</itemgap>
+				<onleft>200</onleft>
+				<onright>noop</onright>
+				<onup>noop</onup>
+				<ondown>noop</ondown>
+				<orientation>vertical</orientation>
+
+				<!-- General -->
+				<control type="button" id="93">
+					<width>354</width>
+					<label>16000</label>
+				</control>
+
+				<!-- Storage -->
+				<control type="button" id="94">
+					<width>354</width>
+					<label>13277</label>
+				</control>
+
+				<!-- Summary -->
+				<control type="button" id="95">
+					<width>354</width>
+					<label>20037</label>
+				</control>
+
+				<!-- Network -->
+				<control type="button" id="96">
+					<width>354</width>
+					<label>13279</label>
+				</control>
+
+				<!-- Video -->
+				<control type="button" id="97">
+					<width>354</width>
+					<label>13280</label>
+				</control>
+
+				<!-- Hardware -->
+				<control type="button" id="98">
+					<width>354</width>
+					<label>13281</label>
+				</control>
+
+				<!-- PVR -->
+				<control type="button" id="99">
+					<width>354</width>
+					<label>32007</label>
+				</control>
+
+			</control>
+
+			<control type="grouplist">
+				<posx>548</posx>
+				<posy>176</posy>
+				<width>1184</width>
+				<height>784</height>
+				<itemgap>8</itemgap>
+				<orientation>vertical</orientation>
+				<visible>Control.HasFocus(93)</visible>
+
+				<!-- XBMC XBE BUILD Version -->
+				<control type="label" id="52">
+					<width>1184</width>
+					<height>80</height>
+				</control>
+
+				<!-- Line -->
+				<control type="image">
+					<width>1184</width>
+					<height>1</height>
+					<texture>global/Line.png</texture>
+				</control>
+
+				<!-- CPU Text -->
+				<control type="label">
+					<width>1184</width>
+					<height>60</height>
+					<label>$LOCALIZE[13271] $INFO[System.CPUUsage]</label>
+				</control>
+
+				<!-- CPU BAR -->
+				<control type="progress">
+					<width>1184</width>
+					<info>System.CPUUsage</info>
+				</control>
+
+				<!-- Memory Text -->
+				<control type="label">
+					<width>1184</width>
+					<height>60</height>
+					<label>$LOCALIZE[31030] $INFO[system.memory(used.percent)]</label>
+				</control>
+
+				<!-- Memory BAR -->
+				<control type="progress">
+					<width>1184</width>
+					<info>system.memory(used)</info>
+				</control>
+
+			</control>
+
+			<control type="grouplist">
+				<posx>548</posx>
+				<posy>176</posy>
+				<width>1184</width>
+				<height>784</height>
+				<itemgap>8</itemgap>
+				<orientation>vertical</orientation>
+				<visible>!Control.HasFocus(93)</visible>
+
+				<!-- XBMC XBE BUILD Version -->
+				<control type="label">
+					<width>1184</width>
+					<height>80</height>
+					<label>$INFO[Control.GetLabel(52)]</label>
+				</control>
+
+				<!-- Line -->
+				<control type="image">
+					<width>1184</width>
+					<height>1</height>
+					<texture>global/Line.png</texture>
+				</control>
+
+				<!-- Label 2 -->
+				<control type="label" id="2">
+					<width>1184</width>
+					<height>60</height>
+					<visible>!IsEmpty(Control.GetLabel(2))</visible>
+				</control>
+
+				<!-- Label 3 -->
+				<control type="label" id="3">
+					<width>1184</width>
+					<height>60</height>
+					<visible>!IsEmpty(Control.GetLabel(3))</visible>
+				</control>
+
+				<!-- Label 4 -->
+				<control type="label" id="4">
+					<width>1184</width>
+					<height>60</height>
+					<visible>!IsEmpty(Control.GetLabel(4))</visible>
+				</control>
+
+				<!-- Label 5 -->
+				<control type="label" id="5">
+					<width>1184</width>
+					<height>60</height>
+					<visible>!IsEmpty(Control.GetLabel(5))</visible>
+				</control>
+
+				<!-- Label 6 -->
+				<control type="label" id="6">
+					<width>1184</width>
+					<height>60</height>
+					<visible>!IsEmpty(Control.GetLabel(6))</visible>
+				</control>
+
+				<!-- Label 7 -->
+				<control type="label" id="7">
+					<width>1184</width>
+					<height>60</height>
+					<visible>!IsEmpty(Control.GetLabel(7))</visible>
+				</control>
+
+				<!-- Label 8 -->
+				<control type="label" id="8">
+					<width>1184</width>
+					<height>60</height>
+					<visible>!IsEmpty(Control.GetLabel(8))</visible>
+				</control>
+
+				<!-- Label 9 -->
+				<control type="label" id="9">
+					<width>1184</width>
+					<height>60</height>
+					<visible>!IsEmpty(Control.GetLabel(9))</visible>
+				</control>
+
+				<!-- Label 10 -->
+				<control type="label" id="10">
+					<width>1184</width>
+					<height>60</height>
+					<visible>!IsEmpty(Control.GetLabel(10))</visible>
+				</control>
+
+				<!-- Label 11 -->
+				<control type="label" id="11">
+					<width>1184</width>
+					<height>60</height>
+					<visible>!IsEmpty(Control.GetLabel(11))</visible>
+				</control>
+
+			</control>
+
+		</control>
+
+		<!-- Top Bar -->
+		<include>GlobalTopBar</include>
+
+	</controls>
+
+</window>

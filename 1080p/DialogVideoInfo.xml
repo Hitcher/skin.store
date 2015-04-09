@@ -1,0 +1,409 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<!-- movieinformation -->
+	<defaultcontrol always="true">8</defaultcontrol>
+
+	<controls>
+
+		<!-- Controls -->
+		<control type="group">
+			<include>DialogFadeAnimation</include>
+			<visible>!Control.HasFocus(50) + !Control.HasFocus(60)</visible>
+
+			<!-- Cover Image -->
+			<control type="image">
+				<posx>154</posx>
+				<posy>168</posy>
+				<width>384</width>
+				<height>550</height>
+				<texture fallback="NoArt.png">$VAR[VideoInfoImage]</texture>
+				<aspectratio align="center" aligny="bottom">keep</aspectratio>
+				<bordersize>6</bordersize>
+			</control>
+
+			<control type="grouplist" id="500">
+				<posx>154</posx>
+				<posy>726</posy>
+				<width>384</width>
+				<height>784</height>
+				<itemgap>8</itemgap>
+				<onleft>noop</onleft>
+				<onright>23</onright>
+				<onup>8</onup>
+				<ondown>noop</ondown>
+				<orientation>vertical</orientation>
+
+				<!-- Play -->
+				<control type="togglebutton" id="8">
+					<label>208</label>
+					<altlabel>1024</altlabel>
+					<width>384</width>
+					<usealttexture>!Container.Content(Movies) + !Container.Content(Episodes)</usealttexture>
+				</control>
+
+				<!-- Get Art -->
+				<control type="button" id="10">
+					<label>13511</label>
+					<width>384</width>
+				</control>
+
+				<!-- Refresh -->
+				<control type="button" id="6">
+					<label>184</label>
+					<width>384</width>
+				</control>
+
+			</control>
+
+			<control type="grouplist">
+				<posx>702</posx>
+				<posy>164</posy>
+				<width>1068</width>
+				<height>820</height>
+				<itemgap>24</itemgap>
+				<orientation>vertical</orientation>
+				<usecontrolcoords>true</usecontrolcoords>
+
+				<!-- TV Show Title -->
+				<control type="label">
+					<posx>6</posx>
+					<width>1068</width>
+					<font>Light33</font>
+					<height>33</height>
+					<label>$INFO[ListItem.TVShowTitle]  [COLOR 44FFFFFF]|[/COLOR]  $LOCALIZE[20373] $INFO[ListItem.Season], $LOCALIZE[20359] $INFO[ListItem.Episode]</label>
+					<visible>Container.Content(episodes)</visible>
+				</control>
+
+				<!-- Title -->
+				<control type="label">
+					<posx>6</posx>
+					<width>1068</width>
+					<font>Light48</font>
+					<height>48</height>
+					<label>$INFO[ListItem.Title]</label>
+				</control>
+
+				<!-- Line -->
+				<control type="image">
+					<posx>6</posx>
+					<width>1068</width>
+					<height>1</height>
+					<texture>global/Line.png</texture>
+				</control>
+
+				<!-- Details -->
+				<control type="label">
+					<posx>6</posx>
+					<width>1068</width>
+					<height>68</height>
+					<aligny>bottom</aligny>
+					<font>Regular24</font>
+					<wrapmultiline>true</wrapmultiline>
+					<label>$VAR[VideoInfoType]$INFO[ListItem.Genre,  [COLOR 44FFFFFF]|[/COLOR]  ]$VAR[VideoInfoDate]$INFO[ListItem.Duration,  [COLOR 44FFFFFF]|[/COLOR]  , $LOCALIZE[12391]]$VAR[VideoInfoRating]$INFO[ListItem.Studio,  [COLOR 44FFFFFF]|[/COLOR]  ]</label>
+				</control>
+
+				<!-- Trailer Group -->
+				<control type="group">
+					<width>496</width>
+					<height>279</height>
+					<visible>Container.Content(movies) + !IsEmpty(ListItem.Trailer)</visible>
+
+					<!-- Trailer Image -->
+					<control type="image">
+						<width>508</width>
+						<height>291</height>
+						<bordersize>6</bordersize>
+						<aspectratio align="center" aligny="bottom">keep</aspectratio>
+						<texture fallback="NoArt.png" border="9">$INFO[ListItem.Art(fanart)]</texture>
+					</control>
+
+					<!-- Trailer Button -->
+					<control type="button" id="22">
+						<width>508</width>
+						<height>291</height>
+						<onleft>8</onleft>
+						<ondown>23</ondown>
+						<onclick>PlayMedia($ESCINFO[ListItem.Trailer],1)</onclick>
+						<texturenofocus>-</texturenofocus>
+						<texturefocus border="9">global/ItemFO.png</texturefocus>
+					</control>
+
+					<!-- Overlay Image -->
+					<control type="image">
+						<width>508</width>
+						<height>291</height>
+						<bordersize>6</bordersize>
+						<texture>global/Trailer.png</texture>
+					</control>
+
+					<!-- Trailer Label -->
+					<control type="label">
+						<posx>26</posx>
+						<posy>232</posy>
+						<width>300</width>
+						<height>48</height>
+						<font>Regular24</font>
+						<label>32009</label>
+					</control>
+
+					<!-- Trailer Background -->
+					<control type="image">
+						<width>508</width>
+						<height>291</height>
+						<texture>global/Black.png</texture>
+						<bordersize>6</bordersize>
+						<visible>Player.HasVideo + !VideoPlayer.IsFullscreen</visible>
+					</control>
+
+					<!-- Trailer Video Window -->
+					<control type="videowindow" id="2">
+						<posx>6</posx>
+						<posy>6</posy>
+						<width>496</width>
+						<height>279</height>
+					</control>
+
+				</control>	
+
+				<!-- Info Panel -->
+				<control type="group">
+					<width>1068</width>
+					<height>320</height>
+
+					<!-- Background -->
+					<control type="image">
+						<width>1068</width>
+						<height>320</height>
+						<bordersize>6</bordersize>
+						<texture border="3">global/Diffuse.png</texture>
+					</control>
+
+					<!-- 'Read More' Button -->
+					<control type="button" id="23">
+						<width>1068</width>
+						<height>320</height>
+						<onup>22</onup>
+						<onleft condition="Control.IsVisible(22)">8</onleft>
+						<onleft>500</onleft>
+						<onclick>SetFocus(50)</onclick>
+						<texturenofocus>-</texturenofocus>
+						<texturefocus border="9">global/ItemFO.png</texturefocus>
+					</control>
+
+					<!-- Cast Label -->
+					<control type="label">
+						<posx>44</posx>
+						<posy>24</posy>
+						<width>100</width>
+						<height>48</height>
+						<font>Regular24Bold</font>
+						<label>206</label>
+						<visible>!IsEmpty(Container(50).ListItem(1).Label)</visible>
+					</control>
+
+					<!-- Cast -->
+					<control type="textbox">
+						<posx>144</posx>
+						<posy>30</posy>
+						<width>880</width>
+						<height>76</height>
+						<font>Regular24</font>
+						<textcolor>Grey</textcolor>
+						<autoscroll>False</autoscroll>
+						<label>$INFO[Container(50).ListItem.Label]$INFO[Container(50).ListItem(1).Label,&#8218;  ]$INFO[Container(50).ListItem(2).Label,&#8218;  ]$INFO[Container(50).ListItem(3).Label,&#8218;  ]$INFO[Container(50).ListItem(4).Label,&#8218;  ]$INFO[Container(50).ListItem(5).Label,&#8218;  ]$INFO[Container(50).ListItem(6).Label,&#8218;  ]$INFO[Container(50).ListItem(7).Label,&#8218;  ]</label>
+					</control>
+
+					<!-- Crew Label -->
+					<control type="label">
+						<posx>44</posx>
+						<posy>104</posy>
+						<width>100</width>
+						<height>48</height>
+						<font>Regular24Bold</font>
+						<label>32008</label>
+						<visible>!IsEmpty(ListItem.Director) | !IsEmpty(ListItem.Writer)</visible>
+					</control>
+
+					<!-- Crew -->
+					<control type="textbox">
+						<posx>144</posx>
+						<posy>110</posy>
+						<width>880</width>
+						<height>72</height>
+						<font>Regular24</font>
+						<textcolor>Grey</textcolor>
+						<autoscroll>False</autoscroll>
+						<label>$INFO[ListItem.Director,, ($LOCALIZE[20339])]$INFO[ListItem.Writer,&#8218;  , ($LOCALIZE[20417])]</label>
+					</control>
+
+					<!-- Plot -->
+					<control type="textbox">
+						<posx>44</posx>
+						<posy>190</posy>
+						<width>980</width>
+						<height>104</height>
+						<font>Regular24</font>
+						<textcolor>Grey</textcolor>
+						<autoscroll>False</autoscroll>
+						<label>$INFO[ListItem.Plot]</label>
+					</control>
+
+					<!-- 'Read More' Image -->
+					<control type="image">
+						<posx>762</posx>
+						<posy>270</posy>
+						<width>300</width>
+						<height>44</height>
+						<texture>global/Overlay.png</texture>
+						<visible>Control.HasFocus(23)</visible>
+					</control>
+
+					<!-- 'Read More' Label -->
+					<control type="label">
+						<posx>1033</posx>
+						<posy>268</posy>
+						<width>200</width>
+						<height>48</height>
+						<align>right</align>
+						<font>Regular24</font>
+						<label>32010</label>
+						<visible>Control.HasFocus(23)</visible>
+					</control>
+
+				</control>
+
+			</control>
+
+		</control>
+
+		<control type="group">
+			<visible>Control.HasFocus(50) | Control.HasFocus(60)</visible>
+			<include>VisibleFadeAnimation</include>
+
+			<!-- List Background Image -->
+			<control type="image">
+				<posx>150</posx>
+				<posy>210</posy>
+				<width>796</width>
+				<height>721</height>
+				<texture border="3">global/Panel.png</texture>
+			</control>
+
+			<!-- Cast List -->
+			<control type="list" id="50">
+				<posx>150</posx>
+				<posy>210</posy>
+				<width>796</width>
+				<height>720</height>
+				<onleft>SetFocus(23)</onleft>
+				<onright>60</onright>
+				<onup>50</onup>
+				<ondown>50</ondown>
+				<pagecontrol>60</pagecontrol>
+				<preloaditems>2</preloaditems>
+				<viewtype label="535">list</viewtype>
+				<scrolltime>200</scrolltime>
+
+				<itemlayout width="796" height="60">
+
+					<control type="image">
+						<width>796</width>
+						<height>1</height>
+						<texture>global/Line.png</texture>
+					</control>
+
+					<control type="label">
+						<posx>30</posx>
+						<width>736</width>
+						<height>60</height>
+						<font>Light28</font>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+
+				</itemlayout>
+
+				<focusedlayout width="796" height="60">
+
+					<control type="image">
+						<width>796</width>
+						<height>60</height>
+						<colordiffuse>FF000000</colordiffuse>
+						<texture>global/Line.png</texture>
+						<animation effect="fade" start="100" end="50" condition="!Control.HasFocus(50)">Conditional</animation>
+					</control>
+
+					<control type="image">
+						<width>796</width>
+						<height>1</height>
+						<texture>global/Line.png</texture>
+					</control>
+
+					<control type="label">
+						<posx>30</posx>
+						<width>736</width>
+						<height>60</height>
+						<font>Light28</font>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+
+				</focusedlayout>
+
+			</control>
+
+			<!-- Scrollbar -->
+			<control type="scrollbar" id="60">
+				<posx>966</posx>
+				<posy>210</posy>
+				<width>8</width>
+				<height>720</height>
+				<onleft>50</onleft>
+				<orientation>vertical</orientation>
+				<texturesliderbackground>global/Overlay.png</texturesliderbackground>
+				<texturesliderbar border="6">global/White.png</texturesliderbar>
+				<texturesliderbarfocus border="6">global/White.png</texturesliderbarfocus>
+				<textureslidernib>-</textureslidernib>
+				<textureslidernibfocus>-</textureslidernibfocus>
+				<visible allowhiddenfocus="true">Control.HasFocus(60) | Container.Scrolling</visible>
+				<animation effect="fade" start="0" end="100" time="400">Visible</animation>
+				<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+			</control>
+
+			<!-- List image -->
+			<control type="image">
+				<posx>994</posx>
+				<posy>210</posy>
+				<width>480</width>
+				<height>350</height>
+				<fadetime>200</fadetime>
+				<bordersize>6</bordersize>
+				<aspectratio align="left" aligny="bottom">keep</aspectratio>
+				<texture fallback="NoArt.png">$INFO[Container(50).ListItem.Icon]</texture>
+				<bordertexture border="9">global/ButtonFO.png</bordertexture>
+			</control>
+
+			<!-- Plot Background Image -->
+			<control type="image">
+				<posx>994</posx>
+				<posy>580</posy>
+				<width>796</width>
+				<height>350</height>
+				<texture border="3">global/Panel.png</texture>
+			</control>
+
+			<!-- Plot -->
+			<control type="textbox">
+				<posx>1038</posx>
+				<posy>620</posy>
+				<width>708</width>
+				<height>268</height>
+				<font>Regular24</font>
+				<textcolor>Grey</textcolor>
+				<autoscroll delay="6000" time="3000" repeat="10000">true</autoscroll>
+				<label>$INFO[ListItem.Plot]</label>
+			</control>
+
+		</control>
+
+	</controls>
+
+</window>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window type="dialog" id="51">
+	<!-- Custom Bottom Bar -->
+	<zorder>0</zorder>	<!-- Set so this dialog is always underneath all other dialogs -->
+	<visible>!Window.IsVisible(startup)</visible>
+
+	<controls>
+
+		<control type="group">
+			<visible>!Window.IsVisible(3000) + !Window.IsVisible(fullscreenvideo) + !Window.IsVisible(visualisation) + !Window.IsVisible(screencalibration) + !Window.IsVisible(screensaver) + !Window.IsVisible(slideshow)</visible>
+
+			<!-- Bottom Diffuse -->
+			<control type="image">
+				<posy>120r</posy>
+				<width>MaxWidth</width>
+				<height>120</height>
+				<height>MaxHeight</height>
+				<texture flipy="true">global/DiffuseVertical.png</texture>
+			</control>
+
+			<!-- Bottom Bar Info -->
+			<control type="grouplist">
+				<posx>0</posx>
+				<posy>42r</posy>
+				<width>1920</width>
+				<height>42</height>
+				<align>left</align>
+				<itemgap>0</itemgap>
+				<orientation>horizontal</orientation>
+				<usecontrolcoords>true</usecontrolcoords>
+
+				<!-- Invisible labels used to shift RSS feed when music and video overlays is visible -->
+				<control type="label">
+					<posy>3</posy>
+					<width>30</width>
+					<height>24</height>
+					<font>-</font>
+					<visible>Window.IsVisible(musicoverlay) | Window.IsVisible(videooverlay)</visible>
+				</control>
+				<control type="label">
+					<posy>3</posy>
+					<width min="10" max="200">auto</width>
+					<height>24</height>
+					<font>Regular24</font>
+					<textcolor>00000000</textcolor>
+					<label>$LOCALIZE[13350] </label>
+					<visible>Window.IsVisible(musicoverlay) | Window.IsVisible(videooverlay)</visible>
+				</control>
+				<control type="label">
+					<posy>3</posy>
+					<width min="10" max="720">auto</width>
+					<height>24</height>
+					<font>Regular24</font>
+					<textcolor>00000000</textcolor>
+					<label>$INFO[MusicPlayer.Artist,, - ]$INFO[MusicPlayer.Title]</label>
+					<visible>Window.IsVisible(musicoverlay)</visible>
+				</control>
+				<control type="label">
+					<posy>3</posy>
+					<width min="10" max="720">auto</width>
+					<height>24</height>
+					<font>Regular24</font>
+					<textcolor>00000000</textcolor>
+					<label>$INFO[VideoPlayer.TVShowTitle,, - ]$INFO[VideoPlayer.Title]</label>
+					<visible>Window.IsVisible(videooverlay)</visible>
+				</control>
+
+				<!-- RSS Feed -->
+				<control type="rss">
+					<width>1920</width>
+					<height>24</height>
+					<font>Regular24</font>
+					<urlset>1</urlset>
+					<titlecolor>Grey</titlecolor>
+					<headlinecolor>White</headlinecolor>
+					<textcolor>White</textcolor>
+				</control>
+
+			</control>
+
+		</control>
+
+	</controls>
+
+</window>

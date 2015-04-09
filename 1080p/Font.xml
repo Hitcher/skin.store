@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fonts>
+
+	<fontset id="Default" unicode="true">
+
+		<font>
+			<name>Light28</name>
+			<filename>OpenSans-Light.ttf</filename>
+			<size>28</size>
+		</font>
+
+		<font>
+			<name>Light33</name>
+			<filename>OpenSans-Light.ttf</filename>
+			<size>33</size>
+		</font>
+
+		<font>
+			<name>Light38</name>
+			<filename>OpenSans-Light.ttf</filename>
+			<size>38</size>
+		</font>
+
+		<font>
+			<name>Light48</name>
+			<filename>OpenSans-Light.ttf</filename>
+			<size>48</size>
+		</font>
+
+		<font>
+			<name>Regular24</name>
+			<filename>OpenSans-Regular.ttf</filename>
+			<size>24</size>
+		</font>
+
+		<font>
+			<name>Regular24Bold</name>
+			<filename>OpenSans-Semibold.ttf</filename>
+			<size>24</size>
+		</font>
+
+		<font>
+			<name>Regular28</name>
+			<filename>OpenSans-Regular.ttf</filename>
+			<size>28</size>
+		</font>
+
+		<!-- Required for system -->
+
+		<font>
+			<name>font13</name>
+			<filename>Arial.ttf</filename>
+			<size>30</size>
+		</font>
+
+	</fontset>
+
+	<fontset id="Heavy" unicode="true">
+
+		<font>
+			<name>Light28</name>
+			<filename>OpenSans-Regular.ttf</filename>
+			<size>28</size>
+		</font>
+
+		<font>
+			<name>Light33</name>
+			<filename>OpenSans-Regular.ttf</filename>
+			<size>33</size>
+		</font>
+
+		<font>
+			<name>Light38</name>
+			<filename>OpenSans-Regular.ttf</filename>
+			<size>38</size>
+		</font>
+
+		<font>
+			<name>Light48</name>
+			<filename>OpenSans-Regular.ttf</filename>
+			<size>48</size>
+		</font>
+
+		<font>
+			<name>Regular24</name>
+			<filename>OpenSans-Semibold.ttf</filename>
+			<size>24</size>
+		</font>
+
+		<font>
+			<name>Regular24Bold</name>
+			<filename>OpenSans-Bold.ttf</filename>
+			<size>24</size>
+		</font>
+
+		<font>
+			<name>Regular28</name>
+			<filename>OpenSans-Semibold.ttf</filename>
+			<size>28</size>
+		</font>
+
+		<!-- Required for system -->
+
+		<font>
+			<name>font13</name>
+			<filename>Arial.ttf</filename>
+			<size>30</size>
+		</font>
+
+	</fontset>
+	
+</fonts>

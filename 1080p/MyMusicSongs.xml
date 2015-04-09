@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<!-- musicfiles -->
+	<backgroundcolor>BackgroundColor</backgroundcolor>
+	<defaultcontrol always="true">50</defaultcontrol>
+	<views>50,53</views>
+
+	<controls>
+
+		<!-- Global Background -->
+		<include>GlobalBackground</include>
+
+		<!-- Fanart Background -->
+		<include condition="Skin.HasSetting(ShowMusicFanart)">FanartBackground</include>
+
+		<!-- Views -->
+		<control type="group">
+			<animation type="WindowOpen">
+				<effect type="fade" start="0" end="100" time="600" />
+				<effect type="zoom" center="auto" start="94" end="100" time="400" />
+			</animation>
+			<animation type="WindowClose">
+				<effect type="fade" start="100" end="0" time="400" />
+				<effect type="zoom" center="auto" start="100" end="94" time="400" />
+			</animation>
+			<animation type="Conditional" condition="Control.HasFocus(200) | Control.HasFocus(300)">
+				<effect type="zoom" center="1920,154" start="100" end="76" time="200" />
+			</animation>
+			<animation type="Conditional" condition="Control.HasFocus(900)">
+				<effect type="zoom" center="0,154" start="100" end="76" time="200" />
+			</animation>
+			<include>ViewList</include>
+			<include>ViewSquare</include>
+		</control>
+
+		<!-- Main Menu -->
+		<include>IncludeMainMenu</include>
+
+		<!-- Sub Menu -->
+		<control type="group">
+			<posx>1920</posx>
+			<animation type="Conditional" condition="Control.HasFocus(900)">
+				<effect type="slide" end="-460,0" time="200" tween="linear" easing="inout" />
+			</animation>
+			<animation type="WindowClose" condition="Control.HasFocus(900)">
+				<effect type="slide" end="460,0" time="200" tween="linear" easing="inout" />
+			</animation>
+
+			<!-- Side Bar -->
+			<control type="image">
+				<width>462</width>
+				<height>MaxHeight</height>
+				<texture border="2,60,2,60">global/BarVertical.png</texture>
+			</control>
+
+			<!-- Options Menu -->
+			<control type="fixedlist" id="900">
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>460</width>
+				<height>1080</height>
+				<onup>noop</onup>
+				<ondown>noop</ondown>
+				<onleft>50</onleft>
+				<onright>noop</onright>
+				<focusposition>4</focusposition>
+				<orientation>vertical</orientation>
+				<defaultcontrol>1</defaultcontrol>
+				<scrolltime tween="sine" easing="out">320</scrolltime>
+
+				<itemlayout width="460" height="70">
+
+					<control type="label">
+						<posx>104</posx>
+						<posy>16</posy>
+						<width>316</width>
+						<height>33</height>
+						<font>Light33</font>
+						<info>ListItem.Label</info>
+					</control>
+
+				</itemlayout>
+
+				<focusedlayout width="460" height="70">
+
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>460</width>
+						<height>70</height>
+						<texture border="6">global/MenuButtonFO.png</texture>
+					</control>
+
+					<control type="label">
+						<posx>104</posx>
+						<posy>16</posy>
+						<width>316</width>
+						<height>33</height>
+						<font>Light33</font>
+						<textcolor>Black</textcolor>
+						<info>ListItem.Label</info>
+					</control>
+
+				</focusedlayout>
+
+				<content>
+
+					<item id="1">
+						<!-- View -->
+						<label>$LOCALIZE[32001]: $INFO[Container.Viewmode]</label>
+						<onclick>Container.NextViewMode</onclick>
+					</item>
+
+					<item id="2">
+						<!-- Fanart Off -->
+						<label>$LOCALIZE[20445]: $LOCALIZE[16039]</label>
+						<onclick>Skin.SetBool(ShowMusicFanart)</onclick>
+						<onclick>ReplaceWindow(musicfiles)</onclick>
+						<visible>!Skin.HasSetting(ShowMusicFanart)</visible>
+					</item>
+
+					<item id="3">
+						<!-- Fanart On -->
+						<label>$LOCALIZE[20445]: $LOCALIZE[16041]</label>
+						<onclick>Skin.Reset(ShowMusicFanart)</onclick>
+						<onclick>ReplaceWindow(musicfiles)</onclick>
+						<visible>Skin.HasSetting(ShowMusicFanart)</visible>
+					</item>
+
+					<item id="4">
+						<!-- Sort -->
+						<label>$INFO[Control.GetLabel(3)]</label>
+						<onclick>SendClick(3)</onclick>
+						<visible>Control.IsEnabled(3)</visible>
+					</item>
+
+					<item id="5">
+						<!-- Order -->
+						<label>$INFO[Control.GetLabel(4)]</label>
+						<onclick>SendClick(4)</onclick>
+						<visible>Control.IsEnabled(4)</visible>
+					</item>
+
+					<item id="6">
+						<!-- Playlists -->
+						<label>136</label>
+						<onclick>SendClick(7)</onclick>
+						<visible>Control.IsEnabled(7)</visible>
+					</item>
+
+					<item id="7">
+						<!-- Player Controls -->
+						<label>32006</label>
+						<onclick>ActivateWindow(playercontrols)</onclick>
+						<visible>Player.HasMedia</visible>
+					</item>
+
+				</content>
+
+			</control>
+
+		</control>
+
+		<!-- Top Bar -->
+		<include>GlobalTopBar</include>
+
+		<!-- Hidden Buttons for Menu -->
+
+		<!-- Sort -->
+		<control type="button" id="3">
+			<include>HiddenControl</include>
+		</control>
+
+		<!-- Ascending -->
+		<control type="togglebutton" id="4">
+			<include>HiddenControl</include>
+			<label>584</label>
+			<altlabel>585</altlabel>
+		</control>
+
+		<!-- Playlists -->
+		<control type="button" id="7">
+			<include>HiddenControl</include>
+		</control>
+
+	</controls>
+
+</window>

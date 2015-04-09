@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<!-- startup -->
+	<onload>AlarmClock(OverrideSkinWidgets,ReplaceWindow(Home),00:30,silent)</onload>
+	<onunload>CancelAlarm(OverrideSkinWidgets,true)</onunload>
+	<defaultcontrol always="true">10</defaultcontrol>
+
+	<controls>
+
+		<!-- Background Image -->
+
+		<control type="image">
+			<include>DimensionsFullscreen</include>
+			<texture>global/Overlay.png</texture>
+		</control>
+
+		<!-- Busy Images -->
+
+		<control type="multiimage">
+			<posx>927</posx>
+			<posy>521</posy>
+			<width>65</width>
+			<height>37</height>
+			<imagepath>busy</imagepath>
+			<fadetime>20</fadetime>
+			<timeperimage>40</timeperimage>
+			<pauseatend>120</pauseatend>
+		</control>
+
+		<!-- weather lookup -->
+
+		<control type="label">
+			<include>HiddenControl</include>
+			<label>$INFO[Weather.Conditions]</label>
+		</control>
+
+		<!-- skin widgets running button -->
+
+		<control type="button" id="10">
+			<include>HiddenControl</include>
+			<onfocus condition="!System.HasAddon(service.skin.widgets)">SetFocus(11)</onfocus>
+			<onfocus condition="System.HasAddon(service.skin.widgets)">SetFocus(10)</onfocus>
+			<visible>IsEmpty(Window(Home).Property(SkinWidgets_Running))</visible>
+			<animation effect="fade" start="0" end="100" time="0" delay="6500">Focus</animation>
+		</control>
+
+		<!-- skin widgets not running button -->
+
+		<control type="button" id="10">
+			<include>HiddenControl</include>
+			<onfocus>ReplaceWindow(Home)</onfocus>
+			<visible>!IsEmpty(Window(Home).Property(SkinWidgets_Running))</visible>
+			<animation effect="fade" start="0" end="100" time="0" delay="6500">Focus</animation>
+		</control>
+
+		<!-- load home button -->
+
+		<control type="button" id="11">
+			<include>HiddenControl</include>
+			<onfocus>ReplaceWindow(Home)</onfocus>
+			<animation effect="fade" start="0" end="100" time="0" delay="6500">Focus</animation>
+		</control>
+
+	</controls>
+
+</window>

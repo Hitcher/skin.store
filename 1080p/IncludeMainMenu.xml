@@ -1,0 +1,680 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+
+	<include name="IncludeMainMenu">
+
+		<control type="group">
+			<posx>0</posx>
+			<animation type="Conditional" condition="!Window.IsVisible(home) + !Control.HasFocus(200) + !Control.HasFocus(300)">
+				<effect type="slide" end="-460,0" time="200" tween="linear" easing="inout" />
+			</animation>
+			<animation type="Conditional" condition="Window.IsVisible(home) + ControlGroup(400).HasFocus">
+				<effect type="slide" end="-460,0" time="200" tween="linear" easing="inout" />
+			</animation>
+			<animation type="WindowOpen" condition="Window.IsVisible(home)">
+				<effect type="slide" start="-460,0" end="0,0" time="200" delay="200" tween="linear" easing="inout" />
+			</animation>
+			<animation type="WindowClose">
+				<effect type="slide" start="0,0" end="-460,0" time="200" delay="100" tween="linear" easing="inout" />
+			</animation>
+
+			<!-- Side Bar -->
+			<control type="image">
+				<posx>-2</posx>
+				<width>462</width>
+				<height>MaxHeight</height>
+				<texture border="2,60,2,60">global/BarVertical.png</texture>
+			</control>
+
+			<!-- Main Group -->
+			<control type="group">
+				<posx>0</posx>
+				<posy>0</posy>
+				<animation type="Conditional" condition="Control.HasFocus(300)" reversible="true">
+					<effect type="slide" start="0,0" end="-460,0" time="200" tween="linear" easing="inout" />
+				</animation>
+
+				<!-- Main Menu -->
+				<control type="fixedlist" id="200">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>460</width>
+					<height>1080</height>
+					<onup>noop</onup>
+					<ondown>noop</ondown>
+					<onleft>noop</onleft>
+					<onright>300</onright>
+					<focusposition>4</focusposition>
+					<orientation>vertical</orientation>
+					<defaultcontrol>1</defaultcontrol>
+					<scrolltime tween="sine" easing="out">320</scrolltime>
+
+					<itemlayout width="460" height="70">
+
+						<control type="label">
+							<posx>104</posx>
+							<posy>16</posy>
+							<width>316</width>
+							<height>33</height>
+							<font>Light33</font>
+							<info>ListItem.Label</info>
+						</control>
+
+					</itemlayout>
+
+					<focusedlayout width="460" height="70">
+
+						<control type="group">
+							<visible>Control.HasFocus(200)</visible>
+
+							<control type="image">
+								<posx>0</posx>
+								<posy>0</posy>
+								<width>460</width>
+								<height>70</height>
+								<texture border="6">global/MenuButtonFO.png</texture>
+							</control>
+
+							<control type="image">
+								<posx>416</posx>
+								<posy>21</posy>
+								<width>18</width>
+								<height>29</height>
+								<texture>ArrowRight.png</texture>
+								<visible>Container(200).HasFocus(2) | Container(200).HasFocus(3) | Container(200).HasFocus(4) | Container(200).HasFocus(5) | Container(200).HasFocus(6) | [Container(200).HasFocus(7) + !IsEmpty(Window(home).Property(favourite.1.name))] | Container(200).HasFocus(10)</visible>
+							</control>
+
+							<control type="label">
+								<posx>104</posx>
+								<posy>16</posy>
+								<width>316</width>
+								<height>33</height>
+								<font>Light33</font>
+								<textcolor>Black</textcolor>
+								<info>ListItem.Label</info>
+							</control>
+
+						</control>
+
+						<control type="label">
+							<posx>104</posx>
+							<posy>16</posy>
+							<width>316</width>
+							<height>33</height>
+							<font>Light33</font>
+							<info>ListItem.Label</info>
+							<visible>!Control.HasFocus(200)</visible>
+						</control>
+
+					</focusedlayout>
+
+					<content>
+
+						<!-- Home -->
+						<item id="1">
+							<label>10000</label>
+							<onclick>ActivateWindow(Home)</onclick>
+						</item>
+						<!-- Movies -->
+						<item id="2">
+							<label>342</label>
+							<onclick>ActivateWindow(Video,movietitles)</onclick>
+							<visible>Library.HasContent(Movies)</visible>
+						</item>
+						<!-- TV Shows -->
+						<item id="3">
+							<label>20343</label>
+							<onclick>ActivateWindow(Video,tvshowtitles)</onclick>
+							<visible>Library.HasContent(TVShows)</visible>
+						</item>
+						<!-- Videos -->
+						<item id="4">
+							<label>3</label>
+							<onclick>ActivateWindow(Video,root)</onclick>
+						</item>
+						<!-- Music -->
+						<item id="5">
+							<label>2</label>
+							<onclick condition="!Library.HasContent(Music)">ActivateWindow(MusicFiles)</onclick>
+							<onclick condition="Library.HasContent(Music)">ActivateWindow(MusicLibrary)</onclick>
+						</item>
+						<!-- Pictures -->
+						<item id="6">
+							<label>1</label>
+							<onclick>ActivateWindow(Pictures)</onclick>
+						</item>
+						<!-- Favourites -->
+						<item id="7">
+							<label>1036</label>
+							<onclick>ActivateWindow(Favourites)</onclick>
+						</item>
+						<!-- Weather -->
+						<item id="8">
+							<label>8</label>
+							<onclick>ActivateWindow(weather)</onclick>
+						</item>
+						<!-- Programs -->
+						<item id="9">
+							<label>0</label>
+							<onclick>ActivateWindow(Programs,Addons)</onclick>
+						</item>
+						<!-- System -->
+						<item id="10">
+							<label>13000</label>
+							<onclick>ActivateWindow(settings)</onclick>
+						</item>
+
+					</content>
+
+				</control>
+
+			</control>
+
+			<!-- Sub Menu -->
+			<control type="fixedlist" id="300">
+				<posx>-460</posx>
+				<posy>0</posy>
+				<width>460</width>
+				<height>MaxHeight</height>
+				<onup>noop</onup>
+				<ondown>noop</ondown>
+				<onleft>200</onleft>
+				<onright>SetFocus(300,1)</onright>
+				<onright>50</onright>
+				<focusposition>4</focusposition>
+				<orientation>vertical</orientation>
+				<defaultcontrol>1</defaultcontrol>
+				<scrolltime tween="sine" easing="out">320</scrolltime>
+				<animation type="Conditional" condition="Control.HasFocus(300)" reversible="true">
+					<effect type="slide" start="0,0" end="460,0" time="0" />
+				</animation>
+				<animation type="Conditional" condition="Control.HasFocus(300)" reversible="true">
+					<effect type="fade" start="0" end="100" time="400" />
+				</animation>
+
+				<itemlayout width="460" height="70">
+
+					<control type="label">
+						<posx>104</posx>
+						<posy>16</posy>
+						<width>460</width>
+						<height>33</height>
+						<font>Light33</font>
+						<info>ListItem.Label</info>
+					</control>
+
+				</itemlayout>
+
+				<focusedlayout width="460" height="70">
+
+					<control type="group">
+						<visible>Control.HasFocus(300)</visible>
+
+						<control type="image">
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>460</width>
+							<height>70</height>
+							<texture border="6">global/MenuButtonFO.png</texture>
+						</control>
+
+						<control type="label">
+							<posx>104</posx>
+							<posy>16</posy>
+							<width>460</width>
+							<height>33</height>
+							<font>Light33</font>
+							<textcolor>Black</textcolor>
+							<info>ListItem.Label</info>
+						</control>
+
+					</control>
+
+					<control type="label">
+						<posx>104</posx>
+						<posy>16</posy>
+						<width>460</width>
+						<height>33</height>
+						<font>Light33</font>
+						<info>ListItem.Label</info>
+						<visible>!Control.HasFocus(300)</visible>
+					</control>
+
+				</focusedlayout>
+
+				<content>
+
+					<!-- Movies Sub Menu Items -->
+
+					<!-- Latest Movies -->
+					<item id="1">
+						<label>$LOCALIZE[32002] $LOCALIZE[342]</label>
+						<onclick>ActivateWindow(Videos,recentlyaddedmovies,return)</onclick>
+						<visible>Container(200).HasFocus(2)</visible>
+					</item>
+					<!-- Movie Sets -->
+					<item id="2">
+						<label>$LOCALIZE[20338] $LOCALIZE[20434]</label>
+						<onclick>ActivateWindow(Videos,MovieSets,return)</onclick>
+						<visible>Container(200).HasFocus(2) + Library.HasContent(MovieSets)</visible>
+					</item>
+					<!-- Genres -->
+					<item id="3">
+						<label>135</label>
+						<onclick>ActivateWindow(Videos,moviegenres,return)</onclick>
+						<visible>Container(200).HasFocus(2)</visible>
+					</item>
+					<!-- Studios -->
+					<item id="4">
+						<label>20388</label>
+						<onclick>ActivateWindow(Videos,moviestudios,return)</onclick>
+						<visible>Container(200).HasFocus(2)</visible>
+					</item>
+					<!-- Years -->
+					<item id="5">
+						<label>652</label>
+						<onclick>ActivateWindow(Videos,movieyears,return)</onclick>
+						<visible>Container(200).HasFocus(2)</visible>
+					</item>
+					<!-- Actors -->
+					<item id="6">
+						<label>344</label>
+						<onclick>ActivateWindow(Videos,movieactors,return)</onclick>
+						<visible>Container(200).HasFocus(2)</visible>
+					</item>
+					<!-- Directors -->
+					<item id="7">
+						<label>20348</label>
+						<onclick>ActivateWindow(Videos,moviedirectors,return)</onclick>
+						<visible>Container(200).HasFocus(2)</visible>
+					</item>
+					<!-- Tags -->
+					<item id="8">
+						<label>20459</label>
+						<onclick>ActivateWindow(Videos,movietags,return)</onclick>
+						<visible>Container(200).HasFocus(2)</visible>
+					</item>
+
+					<!-- TV Shows Sub Menu Items -->
+
+					<!-- Latest Episodes -->
+					<item id="1">
+						<label>$LOCALIZE[32002] $LOCALIZE[20360]</label>
+						<onclick>ActivateWindow(Videos,recentlyaddedepisodes,return)</onclick>
+						<visible>Container(200).HasFocus(3)</visible>
+					</item>
+					<!-- In Progress TV Shows -->
+					<item id="2">
+						<label>$LOCALIZE[626]</label>
+						<onclick>ActivateWindow(Videos,library://video/inprogressshows.xml)</onclick>
+						<visible>Container(200).HasFocus(3)</visible>
+					</item>
+					<!-- Genres -->
+					<item id="3">
+						<label>135</label>
+						<onclick>ActivateWindow(Videos,tvshowgenres,return)</onclick>
+						<visible>Container(200).HasFocus(3)</visible>
+					</item>
+					<!-- Studios -->
+					<item id="4">
+						<label>20388</label>
+						<onclick>ActivateWindow(Videos,TvShowStudios,return)</onclick>
+						<visible>Container(200).HasFocus(3)</visible>
+					</item>
+					<!-- Years -->
+					<item id="5">
+						<label>652</label>
+						<onclick>ActivateWindow(Videos,tvshowyears,return)</onclick>
+						<visible>Container(200).HasFocus(3)</visible>
+					</item>
+					<!-- Actors -->
+					<item id="8">
+						<label>344</label>
+						<onclick>ActivateWindow(Videos,tvshowactors,return)</onclick>
+						<visible>Container(200).HasFocus(3)</visible>
+					</item>
+					<!-- Tags -->
+					<item id="9">
+						<label>20459</label>
+						<onclick>ActivateWindow(Videos,tvshowtags,return)</onclick>
+						<visible>Container(200).HasFocus(3)</visible>
+					</item>
+
+					<!-- Videos Sub Menu Items -->
+
+					<!-- Addons -->
+					<item id="1">
+						<label>1037</label>
+						<onclick>ActivateWindow(Videos,Addons,return)</onclick>
+						<visible>Container(200).HasFocus(4)</visible>
+					</item>
+					<!-- Files -->
+					<item id="2">
+						<label>$LOCALIZE[1212] $LOCALIZE[744]</label>
+						<onclick>ActivateWindow(Video,Files)</onclick>
+						<visible>Container(200).HasFocus(4)</visible>
+					</item>
+					<!-- Music Videos -->
+					<item id="3">
+						<label>20389</label>
+						<onclick>ActivateWindow(Videos,musicvideotitles,return)</onclick>
+						<visible>Container(200).HasFocus(4) + Library.HasContent(MusicVideos)</visible>
+					</item>
+					<!-- Playlists -->
+					<item id="4">
+						<label>20012</label>
+						<onclick>ActivateWindow(Videos,Playlists,Return)</onclick>
+						<visible>Container(200).HasFocus(4)</visible>
+					</item>
+					<!-- Play Disc -->
+					<item id="5">
+						<label>341</label>
+						<onclick>PlayDVD</onclick>
+						<visible>Container(200).HasFocus(4) + System.HasMediadvd</visible>
+					</item>
+					<!-- Open/Close Tray -->
+					<item id="6">
+						<label>13391</label>
+						<onclick>EjectTray()</onclick>
+						<visible>Container(200).HasFocus(4) + !System.HasMediadvd</visible>
+					</item>
+
+					<!-- Music Sub Menu Items -->
+
+					<!-- Latest Albums -->
+					<item id="1">
+						<label>$LOCALIZE[32002] $LOCALIZE[132]</label>
+						<onclick>ActivateWindow(MusicLibrary,recentlyaddedalbums,return)</onclick>
+						<visible>Container(200).HasFocus(5)</visible>
+					</item>
+					<!-- Recently Played Albums -->
+					<item id="2">
+						<label>568</label>
+						<onclick>ActivateWindow(MusicLibrary,recentlyplayedalbums,return)</onclick>
+						<visible>Container(200).HasFocus(5)</visible>
+					</item>
+					<!-- Addons -->
+					<item id="3">
+						<label>1038</label>
+						<onclick>ActivateWindow(MusicLibrary,Addons,return)</onclick>
+						<visible>Container(200).HasFocus(5)</visible>
+					</item>
+					<!-- Songs -->
+					<item id="4">
+						<label>134</label>
+						<onclick>ActivateWindow(MusicLibrary,Songs,return)</onclick>
+						<visible>Container(200).HasFocus(5)</visible>
+					</item>
+					<!-- Genres -->
+					<item id="5">
+						<label>135</label>
+						<onclick>ActivateWindow(MusicLibrary,genres,return)</onclick>
+						<visible>Container(200).HasFocus(5)</visible>
+					</item>
+					<!-- Artists -->
+					<item id="6">
+						<label>133</label>
+						<onclick>ActivateWindow(MusicLibrary,artists,return)</onclick>
+						<visible>Container(200).HasFocus(5)</visible>
+					</item>
+					<!-- Years -->
+					<item id="7">
+						<label>652</label>
+						<onclick>ActivateWindow(MusicLibrary,years,return)</onclick>
+						<visible>Container(200).HasFocus(5)</visible>
+					</item>
+					<!-- Playlists -->
+					<item id="8">
+						<label>20011</label>
+						<onclick>ActivateWindow(MusicLibrary,Playlists,Return)</onclick>
+						<visible>Container(200).HasFocus(5)</visible>
+					</item>
+					<!-- Top 100 Albums -->
+					<item id="9">
+						<label>10505</label>
+						<onclick>ActivateWindow(MusicLibrary,Top100Albums,Return)</onclick>
+						<visible>Container(200).HasFocus(5)</visible>
+					</item>
+					<!-- Top 100 Songs -->
+					<item id="10">
+						<label>10504</label>
+						<onclick>ActivateWindow(MusicLibrary,Top100Songs,Return)</onclick>
+						<visible>Container(200).HasFocus(5)</visible>
+					</item>
+					<!-- Files -->
+					<item id="11">
+						<label>$LOCALIZE[2] $LOCALIZE[744]</label>
+						<onclick>ActivateWindow(MusicFiles)</onclick>
+						<visible>Container(200).HasFocus(5)</visible>
+					</item>
+
+					<!-- Pictures Sub Menu Items -->
+
+					<!-- Addons -->
+					<item id="1">
+						<label>1039</label>
+						<onclick>ActivateWindow(Pictures,Addons,return)</onclick>
+						<visible>Container(200).HasFocus(6)</visible>
+					</item>
+
+					<!-- Favourites Sub Menu Items -->
+
+					<!-- Favourites #1 -->
+					<item id="1">
+						<label>$INFO[Window(home).Property(favourite.1.name)]</label>
+						<onclick>$INFO[Window(home).Property(favourite.1.path)]</onclick>
+						<visible>Container(200).HasFocus(7) + !IsEmpty(Window(home).Property(favourite.1.name))</visible>
+					</item>
+					<!-- Favourites #2 -->
+					<item id="2">
+						<label>$INFO[Window(home).Property(favourite.2.name)]</label>
+						<onclick>$INFO[Window(home).Property(favourite.2.path)]</onclick>
+						<visible>Container(200).HasFocus(7) + !IsEmpty(Window(home).Property(favourite.2.name))</visible>
+					</item>
+					<!-- Favourites #3 -->
+					<item id="3">
+						<label>$INFO[Window(home).Property(favourite.3.name)]</label>
+						<onclick>$INFO[Window(home).Property(favourite.3.path)]</onclick>
+						<visible>Container(200).HasFocus(7) + !IsEmpty(Window(home).Property(favourite.3.name))</visible>
+					</item>
+					<!-- Favourites #4 -->
+					<item id="4">
+						<label>$INFO[Window(home).Property(favourite.4.name)]</label>
+						<onclick>$INFO[Window(home).Property(favourite.4.path)]</onclick>
+						<visible>Container(200).HasFocus(7) + !IsEmpty(Window(home).Property(favourite.4.name))</visible>
+					</item>
+					<!-- Favourites #5 -->
+					<item id="5">
+						<label>$INFO[Window(home).Property(favourite.5.name)]</label>
+						<onclick>$INFO[Window(home).Property(favourite.5.path)]</onclick>
+						<visible>Container(200).HasFocus(7) + !IsEmpty(Window(home).Property(favourite.5.name))</visible>
+					</item>
+					<!-- Favourites #6 -->
+					<item id="6">
+						<label>$INFO[Window(home).Property(favourite.6.name)]</label>
+						<onclick>$INFO[Window(home).Property(favourite.6.path)]</onclick>
+						<visible>Container(200).HasFocus(7) + !IsEmpty(Window(home).Property(favourite.6.name))</visible>
+					</item>
+					<!-- Favourites #7 -->
+					<item id="7">
+						<label>$INFO[Window(home).Property(favourite.7.name)]</label>
+						<onclick>$INFO[Window(home).Property(favourite.7.path)]</onclick>
+						<visible>Container(200).HasFocus(7) + !IsEmpty(Window(home).Property(favourite.7.name))</visible>
+					</item>
+					<!-- Favourites #8 -->
+					<item id="8">
+						<label>$INFO[Window(home).Property(favourite.8.name)]</label>
+						<onclick>$INFO[Window(home).Property(favourite.8.path)]</onclick>
+						<visible>Container(200).HasFocus(7) + !IsEmpty(Window(home).Property(favourite.8.name))</visible>
+					</item>
+					<!-- Favourites #9 -->
+					<item id="9">
+						<label>$INFO[Window(home).Property(favourite.9.name)]</label>
+						<onclick>$INFO[Window(home).Property(favourite.9.path)]</onclick>
+						<visible>Container(200).HasFocus(7) + !IsEmpty(Window(home).Property(favourite.9.name))</visible>
+					</item>
+					<!-- Favourites #10 -->
+					<item id="10">
+						<label>$INFO[Window(home).Property(favourite.10.name)]</label>
+						<onclick>$INFO[Window(home).Property(favourite.10.path)]</onclick>
+						<visible>Container(200).HasFocus(7) + !IsEmpty(Window(home).Property(favourite.10.name))</visible>
+					</item>
+					<!-- Favourites #11 -->
+					<item id="11">
+						<label>$INFO[Window(home).Property(favourite.11.name)]</label>
+						<onclick>$INFO[Window(home).Property(favourite.11.path)]</onclick>
+						<visible>Container(200).HasFocus(7) + !IsEmpty(Window(home).Property(favourite.11.name))</visible>
+					</item>
+					<!-- Favourites #12 -->
+					<item id="12">
+						<label>$INFO[Window(home).Property(favourite.12.name)]</label>
+						<onclick>$INFO[Window(home).Property(favourite.12.path)]</onclick>
+						<visible>Container(200).HasFocus(7) + !IsEmpty(Window(home).Property(favourite.12.name))</visible>
+					</item>
+					<!-- Favourites #13 -->
+					<item id="13">
+						<label>$INFO[Window(home).Property(favourite.13.name)]</label>
+						<onclick>$INFO[Window(home).Property(favourite.13.path)]</onclick>
+						<visible>Container(200).HasFocus(7) + !IsEmpty(Window(home).Property(favourite.13.name))</visible>
+					</item>
+					<!-- Favourites #14 -->
+					<item id="14">
+						<label>$INFO[Window(home).Property(favourite.14.name)]</label>
+						<onclick>$INFO[Window(home).Property(favourite.14.path)]</onclick>
+						<visible>Container(200).HasFocus(7) + !IsEmpty(Window(home).Property(favourite.14.name))</visible>
+					</item>
+					<!-- Favourites #15 -->
+					<item id="15">
+						<label>$INFO[Window(home).Property(favourite.15.name)]</label>
+						<onclick>$INFO[Window(home).Property(favourite.15.path)]</onclick>
+						<visible>Container(200).HasFocus(7) + !IsEmpty(Window(home).Property(favourite.15.name))</visible>
+					</item>
+					<!-- Favourites #16 -->
+					<item id="16">
+						<label>$INFO[Window(home).Property(favourite.16.name)]</label>
+						<onclick>$INFO[Window(home).Property(favourite.16.path)]</onclick>
+						<visible>Container(200).HasFocus(7) + !IsEmpty(Window(home).Property(favourite.16.name))</visible>
+					</item>
+					<!-- Favourites #17 -->
+					<item id="17">
+						<label>$INFO[Window(home).Property(favourite.17.name)]</label>
+						<onclick>$INFO[Window(home).Property(favourite.17.path)]</onclick>
+						<visible>Container(200).HasFocus(7) + !IsEmpty(Window(home).Property(favourite.17.name))</visible>
+					</item>
+					<!-- Favourites #18 -->
+					<item id="18">
+						<label>$INFO[Window(home).Property(favourite.18.name)]</label>
+						<onclick>$INFO[Window(home).Property(favourite.18.path)]</onclick>
+						<visible>Container(200).HasFocus(7) + !IsEmpty(Window(home).Property(favourite.18.name))</visible>
+					</item>
+					<!-- Favourites #19 -->
+					<item id="19">
+						<label>$INFO[Window(home).Property(favourite.19.name)]</label>
+						<onclick>$INFO[Window(home).Property(favourite.19.path)]</onclick>
+						<visible>Container(200).HasFocus(7) + !IsEmpty(Window(home).Property(favourite.19.name))</visible>
+					</item>
+					<!-- Favourites #20 -->
+					<item id="20">
+						<label>$INFO[Window(home).Property(favourite.20.name)]</label>
+						<onclick>$INFO[Window(home).Property(favourite.20.path)]</onclick>
+						<visible>Container(200).HasFocus(7) + !IsEmpty(Window(home).Property(favourite.20.name))</visible>
+					</item>
+
+					<!-- System Sub Menu Items -->
+
+					<!-- Appearance -->
+					<item id="1">
+						<label>480</label>
+						<onclick>ActivateWindow(appearancesettings)</onclick>
+						<visible>Container(200).HasFocus(10)</visible>
+					</item>
+					<!-- Videos -->
+					<item id="2">
+						<label>3</label>
+						<onclick>ActivateWindow(videossettings)</onclick>
+						<visible>Container(200).HasFocus(10)</visible>
+					</item>
+					<!-- Music -->
+					<item id="3">
+						<label>2</label>
+						<onclick>ActivateWindow(musicsettings)</onclick>
+						<visible>Container(200).HasFocus(10)</visible>
+					</item>
+					<!-- Pictures -->
+					<item id="4">
+						<label>1</label>
+						<onclick>ActivateWindow(picturessettings)</onclick>
+						<visible>Container(200).HasFocus(10)</visible>
+					</item>
+					<!-- Add-ons -->
+					<item id="5">
+						<label>24001</label>
+						<onclick>ActivateWindow(addonbrowser)</onclick>
+						<visible>Container(200).HasFocus(10)</visible>
+					</item>
+					<!-- Weather -->
+					<item id="6">
+						<label>8</label>
+						<onclick>ActivateWindow(weathersettings)</onclick>
+						<visible>Container(200).HasFocus(10)</visible>
+					</item>
+					<!-- PVR -->
+					<item id="7">
+						<label>PVR</label>
+						<onclick>ActivateWindow(pvrsettings)</onclick>
+						<visible>Container(200).HasFocus(10)</visible>
+					</item>
+					<!-- Network -->
+					<item id="8">
+						<label>13279</label>
+						<onclick>ActivateWindow(networksettings)</onclick>
+						<visible>Container(200).HasFocus(10)</visible>
+					</item>
+					<!-- System -->
+					<item id="9">
+						<label>13000</label>
+						<onclick>ActivateWindow(systemsettings)</onclick>
+						<visible>Container(200).HasFocus(10)</visible>
+					</item>
+					<!-- Profiles -->
+					<item id="10">
+						<label>13200</label>
+						<onclick>ActivateWindow(Profiles)</onclick>
+						<visible>Container(200).HasFocus(10)</visible>
+					</item>
+					<!-- File manager -->
+					<item id="11">
+						<label>7</label>
+						<onclick>ActivateWindow(filemanager)</onclick>
+						<visible>Container(200).HasFocus(10)</visible>
+					</item>
+					<!-- System Info -->
+					<item id="12">
+						<label>10511</label>
+						<onclick>ActivateWindow(systeminfo)</onclick>
+						<visible>Container(200).HasFocus(10)</visible>
+					</item>
+					<!-- Shutdown -->
+					<item id="13">
+						<label>13005</label>
+						<onclick>ActivateWindow(shutdownmenu)</onclick>
+						<visible>Container(200).HasFocus(10)</visible>
+					</item>
+
+				</content>
+
+			</control>
+
+		</control>
+
+		<!-- Dummy Lists to reset focus -->
+		<control type="fixedlist" id="200">
+			<visible>false</visible>
+		</control>
+		<control type="fixedlist" id="300">
+			<visible>false</visible>
+		</control>
+
+	</include>
+
+</includes>

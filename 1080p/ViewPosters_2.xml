@@ -1,0 +1,619 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+
+	<include name="ViewPosters">
+
+		<control type="group">
+			<visible>stringcompare(Container.ViewMode,Posters)</visible>
+			<animation type="WindowOpen">
+				<effect type="fade" start="0" end="100" time="400" delay="200" />
+			</animation>
+			<animation type="WindowClose">
+				<effect type="fade" start="100" end="0" time="200" />
+			</animation>
+
+			<control type="group" id="501">
+				<posx>-546</posx>
+				<posy>0</posy>
+				<width>3427</width>
+				<height>1480</height>
+				<visible>Container.OnScrollNext + Container.HasPrevious</visible>
+				<animation effect="slide" end="-546,0" time="320" tween="circle" easing="out" reversible="false">Hidden</animation>
+
+				<control type="group">
+					<posx>151</posx>
+					<posy>0</posy>
+					<width>526</width>
+					<height>800</height>
+
+					<control type="image">
+						<posy>158</posy>
+						<width>526</width>
+						<height>800</height>
+						<bordersize>6</bordersize>
+						<aspectratio>scale</aspectratio>
+						<texture background="true">$VAR[Icon(-4)Poster]</texture>
+					</control>
+
+					<control type="image">
+						<posy>882</posy>
+						<width>526</width>
+						<height>76</height>
+						<bordersize>6</bordersize>
+						<texture>global/Overlay.png</texture>
+					</control>
+
+					<control type="label">
+						<posy>882</posy>
+						<width>526</width>
+						<height>76</height>
+						<font>Light38</font>
+						<label>$INFO[ListItem(-4).Label]</label>
+					</control>
+
+				</control>
+
+				<control type="group">
+					<posx>697</posx>
+					<posy>0</posy>
+					<width>526</width>
+					<height>800</height>
+
+					<control type="image">
+						<posy>158</posy>
+						<width>526</width>
+						<height>800</height>
+						<bordersize>6</bordersize>
+						<aspectratio>scale</aspectratio>
+						<texture background="true">$VAR[Icon(-3)Poster]</texture>
+					</control>
+
+					<control type="image">
+						<posy>882</posy>
+						<width>526</width>
+						<height>76</height>
+						<bordersize>6</bordersize>
+						<texture>global/Overlay.png</texture>
+					</control>
+
+					<control type="label">
+						<posy>882</posy>
+						<width>526</width>
+						<height>76</height>
+						<font>Light38</font>
+						<label>$INFO[ListItem(-3).Label]</label>
+					</control>
+
+				</control>
+
+				<control type="group">
+					<posx>1243</posx>
+					<posy>0</posy>
+					<width>526</width>
+					<height>800</height>
+
+					<control type="image">
+						<posy>158</posy>
+						<width>526</width>
+						<height>800</height>
+						<bordersize>6</bordersize>
+						<aspectratio>scale</aspectratio>
+						<texture background="true">$VAR[Icon(-2)Poster]</texture>
+					</control>
+
+					<control type="image">
+						<posy>882</posy>
+						<width>526</width>
+						<height>76</height>
+						<bordersize>6</bordersize>
+						<texture>global/Overlay.png</texture>
+					</control>
+
+					<control type="label">
+						<posy>882</posy>
+						<width>526</width>
+						<height>76</height>
+						<font>Light38</font>
+						<label>$INFO[ListItem(-2).Label]</label>
+					</control>
+
+				</control>
+
+				<control type="group">
+					<posx>1789</posx>
+					<posy>0</posy>
+					<width>526</width>
+					<height>800</height>
+
+					<control type="image">
+						<posy>158</posy>
+						<width>526</width>
+						<height>800</height>
+						<bordersize>6</bordersize>
+						<aspectratio>scale</aspectratio>
+						<texture background="true">$VAR[Icon(-1)Poster]</texture>
+					</control>
+
+					<control type="image">
+						<posy>882</posy>
+						<width>526</width>
+						<height>76</height>
+						<bordersize>6</bordersize>
+						<texture>global/Overlay.png</texture>
+					</control>
+
+					<control type="label">
+						<posy>882</posy>
+						<width>526</width>
+						<height>76</height>
+						<font>Light38</font>
+						<label>$INFO[ListItem(-1).Label]</label>
+					</control>
+
+				</control>
+
+				<control type="group">
+					<posx>2335</posx>
+					<posy>0</posy>
+					<width>526</width>
+					<height>800</height>
+
+					<control type="image">
+						<posy>158</posy>
+						<width>526</width>
+						<height>800</height>
+						<texture border="9">global/ItemFO.png</texture>
+					</control>
+
+					<control type="image">
+						<posy>158</posy>
+						<width>526</width>
+						<height>800</height>
+						<bordersize>6</bordersize>
+						<aspectratio>scale</aspectratio>
+						<texture background="true">$VAR[Icon(0)Poster]</texture>
+					</control>
+
+					<control type="image">
+						<posy>882</posy>
+						<width>526</width>
+						<height>76</height>
+						<bordersize>6</bordersize>
+						<texture>global/Overlay.png</texture>
+					</control>
+
+					<control type="label">
+						<posy>882</posy>
+						<width>526</width>
+						<height>76</height>
+						<font>Light38</font>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+
+				</control>
+
+				<control type="group">
+					<posx>2881</posx>
+					<posy>0</posy>
+					<width>526</width>
+					<height>800</height>
+
+					<control type="image">
+						<posy>158</posy>
+						<width>526</width>
+						<height>800</height>
+						<bordersize>6</bordersize>
+						<aspectratio>scale</aspectratio>
+						<texture background="true">$VAR[Icon(1)Poster]</texture>
+					</control>
+
+					<control type="image">
+						<posy>882</posy>
+						<width>526</width>
+						<height>76</height>
+						<bordersize>6</bordersize>
+						<texture>global/Overlay.png</texture>
+					</control>
+
+					<control type="label">
+						<posy>882</posy>
+						<width>526</width>
+						<height>76</height>
+						<font>Light38</font>
+						<label>$INFO[ListItem(1).Label]</label>
+					</control>
+
+				</control>
+
+			</control>
+
+			<control type="group" id="502">
+				<posx>-1092</posx>
+				<posy>0</posy>
+				<width>3427</width>
+				<height>1480</height>
+				<visible>Container.OnScrollPrevious + Container.HasNext</visible>
+				<animation effect="slide" end="546,0" time="320" tween="circle" easing="out" reversible="false">Hidden</animation>
+
+				<control type="group">
+					<posx>151</posx>
+					<posy>0</posy>
+					<width>526</width>
+					<height>800</height>
+
+					<control type="image">
+						<posy>158</posy>
+						<width>526</width>
+						<height>800</height>
+						<bordersize>6</bordersize>
+						<aspectratio>scale</aspectratio>
+						<texture background="true">$VAR[Icon(-1)Poster]</texture>
+					</control>
+
+					<control type="image">
+						<posy>882</posy>
+						<width>526</width>
+						<height>76</height>
+						<bordersize>6</bordersize>
+						<texture>global/Overlay.png</texture>
+					</control>
+
+					<control type="label">
+						<posy>882</posy>
+						<width>526</width>
+						<height>76</height>
+						<font>Light38</font>
+						<label>$INFO[ListItem(-1).Label]</label>
+					</control>
+
+				</control>
+
+				<control type="group">
+					<posx>697</posx>
+					<posy>0</posy>
+					<width>526</width>
+					<height>800</height>
+
+					<control type="image">
+						<posy>158</posy>
+						<width>526</width>
+						<height>800</height>
+						<texture border="9">global/ItemFO.png</texture>
+					</control>
+
+					<control type="image">
+						<posy>158</posy>
+						<width>526</width>
+						<height>800</height>
+						<bordersize>6</bordersize>
+						<aspectratio>scale</aspectratio>
+						<texture background="true">$VAR[Icon(0)Poster]</texture>
+					</control>
+
+					<control type="image">
+						<posy>882</posy>
+						<width>526</width>
+						<height>76</height>
+						<bordersize>6</bordersize>
+						<texture>global/Overlay.png</texture>
+					</control>
+
+					<control type="label">
+						<posy>882</posy>
+						<width>526</width>
+						<height>76</height>
+						<font>Light38</font>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+
+				</control>
+
+				<control type="group">
+					<posx>1243</posx>
+					<posy>0</posy>
+					<width>526</width>
+					<height>800</height>
+
+					<control type="image">
+						<posy>158</posy>
+						<width>526</width>
+						<height>800</height>
+						<bordersize>6</bordersize>
+						<aspectratio>scale</aspectratio>
+						<texture background="true">$VAR[Icon(1)Poster]</texture>
+					</control>
+
+					<control type="image">
+						<posy>882</posy>
+						<width>526</width>
+						<height>76</height>
+						<bordersize>6</bordersize>
+						<texture>global/Overlay.png</texture>
+					</control>
+
+					<control type="label">
+						<posy>882</posy>
+						<width>526</width>
+						<height>76</height>
+						<font>Light38</font>
+						<label>$INFO[ListItem(1).Label]</label>
+					</control>
+
+				</control>
+
+				<control type="group">
+					<posx>1789</posx>
+					<posy>0</posy>
+					<width>526</width>
+					<height>800</height>
+
+					<control type="image">
+						<posy>158</posy>
+						<width>526</width>
+						<height>800</height>
+						<bordersize>6</bordersize>
+						<aspectratio>scale</aspectratio>
+						<texture background="true">$VAR[Icon(2)Poster]</texture>
+					</control>
+
+					<control type="image">
+						<posy>882</posy>
+						<width>526</width>
+						<height>76</height>
+						<bordersize>6</bordersize>
+						<texture>global/Overlay.png</texture>
+					</control>
+
+					<control type="label">
+						<posy>882</posy>
+						<width>526</width>
+						<height>76</height>
+						<font>Light38</font>
+						<label>$INFO[ListItem(2).Label]</label>
+					</control>
+
+				</control>
+
+				<control type="group">
+					<posx>2335</posx>
+					<posy>0</posy>
+					<width>526</width>
+					<height>800</height>
+
+					<control type="image">
+						<posy>158</posy>
+						<width>526</width>
+						<height>800</height>
+						<bordersize>6</bordersize>
+						<aspectratio>scale</aspectratio>
+						<texture background="true">$VAR[Icon(3)Poster]</texture>
+					</control>
+
+					<control type="image">
+						<posy>882</posy>
+						<width>526</width>
+						<height>76</height>
+						<bordersize>6</bordersize>
+						<texture>global/Overlay.png</texture>
+					</control>
+
+					<control type="label">
+						<posy>882</posy>
+						<width>526</width>
+						<height>76</height>
+						<font>Light38</font>
+						<label>$INFO[ListItem(3).Label]</label>
+					</control>
+
+				</control>
+
+				<control type="group">
+					<posx>2881</posx>
+					<posy>0</posy>
+					<width>526</width>
+					<height>800</height>
+
+					<control type="image">
+						<posy>158</posy>
+						<width>526</width>
+						<height>800</height>
+						<bordersize>6</bordersize>
+						<aspectratio>scale</aspectratio>
+						<texture background="true">$VAR[Icon(4)Poster]</texture>
+					</control>
+
+					<control type="image">
+						<posy>882</posy>
+						<width>526</width>
+						<height>76</height>
+						<bordersize>6</bordersize>
+						<texture>global/Overlay.png</texture>
+					</control>
+
+					<control type="label">
+						<posy>882</posy>
+						<width>526</width>
+						<height>76</height>
+						<font>Light38</font>
+						<label>$INFO[ListItem(4).Label]</label>
+					</control>
+
+				</control>
+
+			</control>
+
+			<control type="group">
+				<animation type="Conditional" condition="Control.HasFocus(200) | Control.HasFocus(300)">
+					<effect type="zoom" center="1920,158" start="100" end="76" time="200" />
+				</animation>
+				<animation type="Conditional" condition="!Control.IsVisible(501) + !Control.IsVisible(502)">
+					<effect type="fade" start="0" end="100" time="0" />
+				</animation>
+
+				<control type="list" id="51">
+					<posx>151</posx>
+					<posy>0</posy>
+					<width>1638</width>
+					<height>1480</height>
+					<onleft>51</onleft>
+					<onright>51</onright>
+					<onup>200</onup>
+					<ondown>60</ondown>
+					<scrolltime>0</scrolltime>
+					<pagecontrol>60</pagecontrol>
+					<orientation>horizontal</orientation>
+					<viewtype label="Posters">list</viewtype>
+
+					<itemlayout width="546" height="880">
+
+						<control type="image">
+							<posy>158</posy>
+							<width>526</width>
+							<height>800</height>
+							<bordersize>6</bordersize>
+							<aspectratio>scale</aspectratio>
+							<texture background="true">$VAR[Icon(0)Poster]</texture>
+						</control>
+
+						<control type="image">
+							<posy>882</posy>
+							<width>526</width>
+							<height>76</height>
+							<bordersize>6</bordersize>
+							<texture>global/Overlay.png</texture>
+						</control>
+
+						<control type="label">
+							<posy>882</posy>
+							<width>526</width>
+							<height>76</height>
+							<font>Light38</font>
+							<label>$INFO[ListItem.Label]</label>
+						</control>
+
+					</itemlayout>
+
+					<focusedlayout width="546" height="880">
+
+						<control type="image">
+							<posy>158</posy>
+							<width>526</width>
+							<height>800</height>
+							<texture border="9">global/ItemFO.png</texture>
+						</control>
+
+						<control type="image">
+							<posy>158</posy>
+							<width>526</width>
+							<height>800</height>
+							<bordersize>6</bordersize>
+							<aspectratio>scale</aspectratio>
+							<texture background="true">$VAR[Icon(0)Poster]</texture>
+						</control>
+
+						<control type="image">
+							<posy>882</posy>
+							<width>526</width>
+							<height>76</height>
+							<bordersize>6</bordersize>
+							<texture>global/Overlay.png</texture>
+						</control>
+
+						<control type="label">
+							<posy>882</posy>
+							<width>526</width>
+							<height>76</height>
+							<font>Light38</font>
+							<label>$INFO[ListItem.Label]</label>
+						</control>
+
+					</focusedlayout>
+
+				</control>
+
+				<control type="group">
+					<posx>-395</posx>
+					<posy>0</posy>
+					<width>526</width>
+					<height>800</height>
+					<animation type="Conditional" condition="Control.HasFocus(200) | Control.HasFocus(300)">
+						<effect type="fade" start="100" end="0" time="200" />
+					</animation>
+
+					<control type="image">
+						<posy>158</posy>
+						<width>526</width>
+						<height>800</height>
+						<bordersize>6</bordersize>
+						<aspectratio>scale</aspectratio>
+						<texture background="true">$VAR[Icon(Left)Poster]</texture>
+					</control>
+
+					<control type="image">
+						<posy>882</posy>
+						<width>526</width>
+						<height>76</height>
+						<bordersize>6</bordersize>
+						<texture>global/Overlay.png</texture>
+					</control>
+
+					<control type="label">
+						<posy>882</posy>
+						<width>526</width>
+						<height>76</height>
+						<font>Light38</font>
+						<label>$INFO[ListItem(-1).Label]</label>
+					</control>
+
+				</control>
+
+				<control type="group">
+					<posx>1789</posx>
+					<posy>0</posy>
+					<width>526</width>
+					<height>800</height>
+
+					<control type="image">
+						<posy>158</posy>
+						<width>526</width>
+						<height>800</height>
+						<bordersize>6</bordersize>
+						<aspectratio>scale</aspectratio>
+						<texture background="true">$VAR[Icon(Right)Poster]</texture>
+					</control>
+
+					<control type="image">
+						<posy>882</posy>
+						<width>526</width>
+						<height>76</height>
+						<bordersize>6</bordersize>
+						<texture>global/Overlay.png</texture>
+					</control>
+
+					<control type="label">
+						<posy>882</posy>
+						<width>526</width>
+						<height>76</height>
+						<font>Light38</font>
+						<label>$INFO[ListItem(1).Label]</label>
+					</control>
+
+				</control>
+
+			</control>
+
+			<control type="scrollbar" id="60">
+				<posx>1317</posx>
+				<posy>51</posy>
+				<height>978</height>
+				<onleft>51</onleft>
+				<onright>9000</onright>
+				<visible allowhiddenfocus="true">Control.HasFocus(60) | Container.Scrolling</visible>
+				<animation effect="fade" start="0" end="100" time="400" condition="Control.HasFocus(60) | Container.Scrolling">Conditional</animation>
+			</control>
+
+		</control>
+
+	</include>
+
+</includes>

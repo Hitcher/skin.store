@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<!-- karaokelargeselector -->
+
+	<controls>
+
+		<include>GlobalOverlay</include>
+
+		<control type="group">
+			<posx>623</posx>
+			<posy>338</posy>
+
+			<control type="image">
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>675</width>
+				<height>225</height>
+				<texture border="3">global/Panel.png</texture>
+			</control>
+
+			<control type="label" id="1">
+				<!-- header label -->
+				<posx>30</posx>
+				<posy>15</posy>
+				<width>615</width>
+				<font>Light38</font>
+				<label>31031</label>
+				<align>center</align>
+			</control>
+
+			<control type="label" id="401">
+				<!-- Song Number Label -->
+				<posx>30</posx>
+				<posy>68</posy>
+				<width>615</width>
+				<align>center</align>
+			</control>
+
+			<control type="label" id="402">
+				<!-- Song Name Label -->
+				<posx>30</posx>
+				<posy>128</posy>
+				<width>615</width>
+				<font>Light38</font>
+				<align>center</align>
+				<textcolor>blue</textcolor>
+				<scroll>true</scroll>
+			</control>
+
+		</control>
+
+	</controls>
+
+</window>

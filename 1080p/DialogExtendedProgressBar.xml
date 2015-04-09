@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<!-- extendedprogressdialog -->
+	<include>WindowFadeAnimation</include>
+
+	<controls>
+
+		<control type="group">
+			<include>VisibleFadeAnimation</include>
+			<visible>!Window.IsVisible(infodialog)</visible>
+
+			<!-- Background -->
+			<control type="image">
+				<posx>560</posx>
+				<width>800</width>
+				<height>88</height>
+				<texture>global/Black.png</texture>
+			</control>
+
+			<!-- Progress Control -->
+			<control type="progress" id="32">
+				<posx>760</posx>
+				<posy>-8</posy>
+				<width>400</width>
+				<height>8</height>
+			</control>
+
+			<control type="group">
+				<posx>560</posx>
+				<posy>18</posy>
+
+				<!-- Heading -->
+				<control type="label" id="30">
+					<width>800</width>
+					<height>24</height>
+					<align>center</align>
+					<font>Regular28</font>
+					<textcolor>Grey</textcolor>
+				</control>
+
+				<!-- Info Label -->
+				<control type="label" id="31">
+					<posy>34</posy>
+					<width>800</width>
+					<height>24</height>
+					<align>center</align>
+					<font>Regular28</font>
+					<textcolor>White</textcolor>
+				</control>
+
+			</control>
+
+		</control>
+
+	</controls>
+
+</window>

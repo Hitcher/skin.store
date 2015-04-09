@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<!-- locksettings -->
+	<defaultcontrol always="true">5</defaultcontrol>
+	<allowoverlay>yes</allowoverlay>
+
+	<controls>
+
+		<include>GlobalOverlay</include>
+
+		<control type="group">
+			<posx>510</posx>
+			<posy>210</posy>
+
+			<control type="image">
+				<posx>-30</posx>
+				<posy>-30</posy>
+				<width>960</width>
+				<height>744</height>
+				<texture border="3">global/Panel.png</texture>
+			</control>
+
+			<control type="label">
+				<!-- Header Label -->
+				<posx>15</posx>
+				<width>840</width>
+				<label>20043</label>
+				<font>Light38</font>
+								<align>center</align>
+			</control>
+
+			<control type="grouplist" id="5">
+				<!-- Control Area -->
+				<posx>15</posx>
+				<posy>132</posy>
+				<height>411</height>
+				<width>870</width>
+				<itemgap>8</itemgap>
+				<orientation>vertical</orientation>
+				<onleft>28</onleft>
+				<onright>28</onright>
+				<onup>28</onup>
+				<ondown>28</ondown>
+			</control>
+
+			<control type="button" id="7">
+				<!-- button -->
+				<width>870</width>
+				<align>left</align>
+			</control>
+
+			<control type="radiobutton" id="8">
+				<!-- radio_button -->
+				<width>870</width>
+				<align>left</align>
+			</control>
+
+			<control type="spincontrolex" id="9">
+				<!-- spin_controlex -->
+				<width>870</width>
+				<align>left</align>
+			</control>
+
+			<control type="sliderex" id="10">
+				<!-- slider -->
+				<width>870</width>
+				<align>left</align>
+			</control>
+
+			<control type="button" id="28">
+				<!-- Ok -->
+				<posx>135</posx>
+				<posy>588</posy>
+				<width>240</width>
+				<label>186</label>
+				<onleft>5</onleft>
+				<onright>29</onright>
+				<onup>5</onup>
+				<ondown>5</ondown>
+			</control>
+
+			<control type="button" id="29">
+				<!-- Cancel -->
+				<posx>525</posx>
+				<posy>588</posy>
+				<width>240</width>
+				<label>222</label>
+				<onleft>28</onleft>
+				<onright>5</onright>
+				<onup>5</onup>
+				<ondown>5</ondown>
+			</control>
+
+		</control>
+
+	</controls>
+
+</window>

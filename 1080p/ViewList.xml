@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+
+	<include name="ViewList">
+
+		<control type="group">
+			<visible>Control.IsVisible(50)</visible>
+
+			<!-- List Background Image -->
+			<control type="image">
+				<posx>150</posx>
+				<posy>210</posy>
+				<width>1090</width>
+				<height>721</height>
+				<texture border="3">global/Panel.png</texture>
+			</control>
+
+			<!-- List -->
+			<control type="list" id="50">
+				<posx>150</posx>
+				<posy>210</posy>
+				<width>1090</width>
+				<height>720</height>
+				<onleft>200</onleft>
+				<onright>60</onright>
+				<onup>50</onup>
+				<ondown>50</ondown>
+				<pagecontrol>60</pagecontrol>
+				<preloaditems>2</preloaditems>
+				<viewtype label="535">list</viewtype>
+				<scrolltime>200</scrolltime>
+
+				<itemlayout width="1090" height="80">
+
+					<control type="image">
+						<width>1090</width>
+						<height>1</height>
+						<texture>global/Line.png</texture>
+					</control>
+
+					<control type="label">
+						<posx>30</posx>
+						<width>1030</width>
+						<font>Light38</font>
+						<label>$INFO[ListItem.Label]$INFO[ListItem.Label2, - ]</label>
+					</control>
+
+				</itemlayout>
+
+				<focusedlayout width="1090" height="80">
+
+					<control type="image">
+						<width>1090</width>
+						<height>80</height>
+						<colordiffuse>FF000000</colordiffuse>
+						<texture>global/Line.png</texture>
+						<animation effect="fade" start="100" end="50" condition="!Control.HasFocus(50)">Conditional</animation>
+					</control>
+
+					<control type="image">
+						<width>1090</width>
+						<height>1</height>
+						<texture>global/Line.png</texture>
+					</control>
+
+					<control type="label">
+						<posx>30</posx>
+						<width>1030</width>
+						<font>Light38</font>
+						<label>$INFO[ListItem.Label]$INFO[ListItem.Label2, - ]</label>
+					</control>
+
+				</focusedlayout>
+
+			</control>
+
+			<!-- List image -->
+			<control type="image">
+				<posx>1289</posx>
+				<posy>210</posy>
+				<width>480</width>
+				<height>720</height>
+				<fadetime>200</fadetime>
+				<bordersize>6</bordersize>
+				<aspectratio align="left" aligny="center">keep</aspectratio>
+				<texture fallback="NoArt.png">$INFO[ListItem.Icon]</texture>
+				<bordertexture border="9">global/ButtonFO.png</bordertexture>
+				<visible>!IsEmpty(ListItem.Icon)</visible>
+			</control>
+
+			<!-- Scrollbar -->
+			<control type="scrollbar" id="60">
+				<posx>1260</posx>
+				<posy>210</posy>
+				<width>8</width>
+				<height>720</height>
+				<onleft>50</onleft>
+				<onright>900</onright>
+				<orientation>vertical</orientation>
+				<texturesliderbackground>global/Overlay.png</texturesliderbackground>
+				<texturesliderbar border="6">global/White.png</texturesliderbar>
+				<texturesliderbarfocus border="6">global/White.png</texturesliderbarfocus>
+				<textureslidernib>-</textureslidernib>
+				<textureslidernibfocus>-</textureslidernibfocus>
+				<visible allowhiddenfocus="true">Control.HasFocus(60) | Container.Scrolling</visible>
+				<animation effect="fade" start="0" end="100" time="400">Visible</animation>
+				<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+			</control>
+
+		</control>
+
+	</include>
+
+</includes>

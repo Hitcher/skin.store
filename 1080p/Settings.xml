@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<!-- settings -->
+	<defaultcontrol always="true">9000</defaultcontrol>
+	<allowoverlay>yes</allowoverlay>
+
+	<controls>
+
+		<!-- Global Background -->
+		<include>GlobalBackground</include>
+
+		<!-- Top Bar -->
+		<include>GlobalTopBar</include>
+
+		<!-- Main Menu -->
+		<include>IncludeMainMenu</include>
+
+		<!-- Controls -->
+		<control type="group">
+			<animation type="WindowOpen">
+				<effect type="fade" start="0" end="100" time="600" />
+				<effect type="zoom" center="auto" start="94" end="100" time="400" />
+			</animation>
+			<animation type="WindowClose">
+				<effect type="fade" start="100" end="0" time="400" />
+				<effect type="zoom" center="auto" start="100" end="94" time="400" />
+			</animation>
+			<animation type="Conditional" condition="Control.HasFocus(200) | Control.HasFocus(300)">
+				<effect type="zoom" center="1920,154" start="100" end="76" time="200" />
+			</animation>
+			<animation type="Conditional" condition="Control.HasFocus(900)">
+				<effect type="zoom" center="0,154" start="100" end="76" time="200" />
+			</animation>
+
+			<!-- Panel Image -->
+			<control type="image">
+				<posx>455</posx>
+				<posy>267</posy>
+				<width>1010</width>
+				<height>546</height>
+				<texture border="3">global/Panel.png</texture>
+			</control>
+
+			<!-- List -->
+			<control type="panel" id="9000">
+				<posx>464</posx>
+				<posy>276</posy>
+				<width>992</width>
+				<height>528</height>
+				<onup>9000</onup>
+				<ondown>9000</ondown>
+				<viewtype label="List">list</viewtype>
+				<scrolltime>200</scrolltime>
+				<itemlayout width="496" height="88">
+
+					<control type="image">
+						<posx>4</posx>
+						<posy>4</posy>
+						<width>488</width>
+						<height>80</height>
+						<texture border="9">global/ButtonNF.png</texture>
+					</control>
+
+					<control type="label">
+						<posx>244</posx>
+						<width>496</width>
+						<height>88</height>
+						<font>Light38</font>
+						<align>center</align>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+
+				</itemlayout>
+
+				<focusedlayout width="496" height="88">
+
+					<control type="image">
+						<posx>4</posx>
+						<posy>4</posy>
+						<width>488</width>
+						<height>80</height>
+						<texture border="9">global/ButtonFO.png</texture>
+					</control>
+
+					<control type="label">
+						<posx>244</posx>
+						<width>496</width>
+						<height>88</height>
+						<font>Light38</font>
+						<align>center</align>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+
+				</focusedlayout>
+
+				<content>
+					<!-- Appearance -->
+					<item id="1">
+						<label>480</label>
+						<onclick>ActivateWindow(appearancesettings)</onclick>
+					</item>
+					<!-- Videos -->
+					<item id="2">
+						<label>3</label>
+						<onclick>ActivateWindow(videossettings)</onclick>
+					</item>
+					<!-- Music -->
+					<item id="3">
+						<label>2</label>
+						<onclick>ActivateWindow(musicsettings)</onclick>
+					</item>
+					<!-- Pictures -->
+					<item id="4">
+						<label>1</label>
+						<onclick>ActivateWindow(picturessettings)</onclick>
+					</item>
+					<!-- Add-ons -->
+					<item id="5">
+						<label>24001</label>
+						<onclick>ActivateWindow(addonbrowser)</onclick>
+					</item>
+					<!-- Weather -->
+					<item id="6">
+						<label>8</label>
+						<onclick>ActivateWindow(weathersettings)</onclick>
+					</item>
+					<!-- PVR -->
+					<item id="7">
+						<label>32007</label>
+						<onclick>ActivateWindow(pvrsettings)</onclick>
+					</item>
+					<!-- Network -->
+					<item id="8">
+						<label>13279</label>
+						<onclick>ActivateWindow(networksettings)</onclick>
+					</item>
+					<!-- System -->
+					<item id="9">
+						<label>13000</label>
+						<onclick>ActivateWindow(systemsettings)</onclick>
+					</item>
+					<!-- Profiles -->
+					<item id="10">
+						<label>13200</label>
+						<onclick>ActivateWindow(Profiles)</onclick>
+					</item>
+					<!-- File manager -->
+					<item id="11">
+						<label>7</label>
+						<onclick>ActivateWindow(filemanager)</onclick>
+					</item>
+					<!-- System Info -->
+					<item id="12">
+						<label>10511</label>
+						<onclick>ActivateWindow(systeminfo)</onclick>
+					</item>
+				</content>
+			</control>
+
+		</control>
+
+	</controls>
+
+</window>

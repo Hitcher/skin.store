@@ -1,0 +1,639 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<!-- home -->
+	<backgroundcolor>BackgroundColor</backgroundcolor>
+	<onload>CancelAlarm(OverrideSkinWidgets,true)</onload>
+	<defaultcontrol always="true">200</defaultcontrol>
+
+	<controls>
+
+		<!-- Global Background -->
+		<include>GlobalBackground</include>
+
+		<!-- Featured Items Fanart Background -->
+		<control type="group">
+			<animation type="Conditional" condition="Control.HasFocus(53) | Control.HasFocus(54) | Control.HasFocus(55)" reversible="true">
+				<effect type="slide" start="0,0" end="-2035,0" time="300" />
+			</animation>
+			<animation type="Conditional" condition="Control.HasFocus(56) | Control.HasFocus(57) | Control.HasFocus(58)" reversible="true">
+				<effect type="slide" start="0,0" end="-4070,0" time="300" />
+			</animation>
+
+			<control type="image">
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>MaxWidth</width>
+				<height>MaxHeight</height>
+				<fadetime>600</fadetime>
+				<texture background="true">$INFO[Window(home).Property(RecommendedEpisode.1.Art(tvshow.fanart)]</texture>
+				<animation type="WindowOpen">
+					<effect type="fade" start="0" end="100" time="600" />
+					<effect type="zoom" center="auto" start="100" end="106" time="400" />
+				</animation>
+				<animation type="WindowClose">
+					<effect type="fade" start="100" end="0" time="400" />
+					<effect type="zoom" center="auto" start="106" end="100" time="400" />
+				</animation>
+				<animation type="Conditional" condition="True" reversible="true">
+					<effect type="slide" start="0,0" end="-7,0" time="200" />
+				</animation>
+				<animation type="Conditional" condition="Control.HasFocus(51)" reversible="true">
+					<effect type="slide" start="0,0" end="-14,0" time="200" />
+				</animation>
+				<animation type="Conditional" condition="Control.HasFocus(52)" reversible="true">
+					<effect type="slide" start="0,0" end="-21,0" time="200" />
+				</animation>
+			</control>
+
+			<control type="image">
+				<posx>2035</posx>
+				<posy>0</posy>
+				<width>MaxWidth</width>
+				<height>MaxHeight</height>
+				<fadetime>600</fadetime>
+				<texture background="true">$INFO[Window(home).Property(RecommendedEpisode.5.Art(tvshow.fanart)]</texture>
+				<animation type="WindowOpen">
+					<effect type="fade" start="0" end="100" time="600" />
+					<effect type="zoom" center="auto" start="100" end="106" time="400" />
+				</animation>
+				<animation type="WindowClose">
+					<effect type="fade" start="100" end="0" time="400" />
+					<effect type="zoom" center="auto" start="106" end="100" time="400" />
+				</animation>
+				<animation type="Conditional" condition="Control.HasFocus(53)" reversible="true">
+					<effect type="slide" start="0,0" end="-7,0" time="240" />
+				</animation>
+				<animation type="Conditional" condition="Control.HasFocus(54)" reversible="true">
+					<effect type="slide" start="0,0" end="-14,0" time="200" />
+				</animation>
+				<animation type="Conditional" condition="Control.HasFocus(55)" reversible="true">
+					<effect type="slide" start="0,0" end="-21,0" time="200" />
+				</animation>
+			</control>
+
+			<control type="image">
+				<posx>4070</posx>
+				<posy>0</posy>
+				<width>MaxWidth</width>
+				<height>MaxHeight</height>
+				<fadetime>600</fadetime>
+				<texture background="true">$INFO[Window(home).Property(RecommendedEpisode.9.Art(tvshow.fanart)]</texture>
+				<animation type="WindowOpen">
+					<effect type="fade" start="0" end="100" time="600" />
+					<effect type="zoom" center="auto" start="100" end="106" time="400" />
+				</animation>
+				<animation type="WindowClose">
+					<effect type="fade" start="100" end="0" time="400" />
+					<effect type="zoom" center="auto" start="106" end="100" time="400" />
+				</animation>
+				<animation type="Conditional" condition="Control.HasFocus(56)" reversible="true">
+					<effect type="slide" start="0,0" end="-7,0" time="200" />
+				</animation>
+				<animation type="Conditional" condition="Control.HasFocus(57)" reversible="true">
+					<effect type="slide" start="0,0" end="-14,0" time="200" />
+				</animation>
+				<animation type="Conditional" condition="Control.HasFocus(58)" reversible="true">
+					<effect type="slide" start="0,0" end="-21,0" time="200" />
+				</animation>
+			</control>
+
+		</control>
+
+		<!-- Main Menu -->
+		<include>IncludeMainMenu</include>
+
+		<!-- Top Bar -->
+		<include>GlobalTopBar</include>
+
+		<!-- Featured Items Character Art -->
+		<control type="grouplist" id="400">
+			<posx>616</posx>
+			<posy>154</posy>
+			<width>8000</width>
+			<height>926</height>
+			<itemgap>8</itemgap>
+			<orientation>horizontal</orientation>
+			<include>WindowFadeAnimation</include>
+			<animation type="Conditional" condition="ControlGroup(400).HasFocus" reversible="true">
+				<effect type="slide" start="0,0" end="-460,0" time="200" />
+			</animation>
+			<animation type="Conditional" condition="Control.HasFocus(51)" reversible="true">
+				<effect type="slide" start="0,0" end="-56,0" time="200" />
+			</animation>
+			<animation type="Conditional" condition="Control.HasFocus(52)" reversible="true">
+				<effect type="slide" start="0,0" end="-112,0" time="200" />
+			</animation>
+			<animation type="Conditional" condition="Control.HasFocus(53)" reversible="true">
+				<effect type="slide" start="0,0" end="-1772,0" time="200" />
+			</animation>
+			<animation type="Conditional" condition="Control.HasFocus(54)" reversible="true">
+				<effect type="slide" start="0,0" end="-1828,0" time="200" />
+			</animation>
+			<animation type="Conditional" condition="Control.HasFocus(55)" reversible="true">
+				<effect type="slide" start="0,0" end="-1884,0" time="200" />
+			</animation>
+			<animation type="Conditional" condition="Control.HasFocus(56)" reversible="true">
+				<effect type="slide" start="0,0" end="-3544,0" time="200" />
+			</animation>
+			<animation type="Conditional" condition="Control.HasFocus(57)" reversible="true">
+				<effect type="slide" start="0,0" end="-3600,0" time="200" />
+			</animation>
+			<animation type="Conditional" condition="Control.HasFocus(58)" reversible="true">
+				<effect type="slide" start="0,0" end="-3656,0" time="200" />
+			</animation>
+
+			<control type="group">
+				<width>532</width>
+				<height>926</height>
+
+				<control type="image">
+					<posy>116</posy>
+					<width>810</width>
+					<height>810</height>
+					<texture>$INFO[Window(home).Property(RecommendedEpisode.1.Art(tvshow.characterart)]</texture>
+					<animation type="Conditional" condition="true" reversible="true">
+						<effect type="slide" start="0,0" end="-142,0" time="200" />
+					</animation>
+					<animation type="Conditional" condition="Control.HasFocus(51)" reversible="true">
+						<effect type="slide" start="0,0" end="14,0" time="200" />
+					</animation>
+					<animation type="Conditional" condition="Control.HasFocus(52)" reversible="true">
+						<effect type="slide" start="0,0" end="28,0" time="200" />
+					</animation>
+					<animation type="WindowOpen">
+						<effect type="zoom" center="0,0" start="96" end="100" time="800" />
+					</animation>
+					<animation type="WindowClose">
+						<effect type="zoom" center="0,0" start="100" end="96" time="800" />
+					</animation>
+				</control>
+
+			</control>
+
+			<control type="group">
+				<width>1777</width>
+				<height>926</height>
+			</control>
+
+			<control type="group">
+				<width>532</width>
+				<height>926</height>
+
+				<control type="image">
+					<posy>116</posy>
+					<width>810</width>
+					<height>810</height>
+					<texture>$INFO[Window(home).Property(RecommendedEpisode.5.Art(tvshow.characterart)]</texture>
+					<animation type="Conditional" condition="true" reversible="true">
+						<effect type="slide" start="0,0" end="-170,0" time="200" />
+					</animation>
+					<animation type="Conditional" condition="Control.HasFocus(53)" reversible="true">
+						<effect type="slide" start="0,0" end="14,0" time="200" />
+					</animation>
+					<animation type="Conditional" condition="Control.HasFocus(54)" reversible="true">
+						<effect type="slide" start="0,0" end="28,0" time="200" />
+					</animation>
+					<animation type="Conditional" condition="Control.HasFocus(55)" reversible="true">
+						<effect type="slide" start="0,0" end="42,0" time="200" />
+					</animation>
+					<animation type="WindowOpen">
+						<effect type="zoom" center="0,0" start="96" end="100" time="800" />
+					</animation>
+					<animation type="WindowClose">
+						<effect type="zoom" center="0,0" start="100" end="96" time="800" />
+					</animation>
+				</control>
+
+			</control>
+
+			<control type="group">
+				<width>1777</width>
+				<height>926</height>
+			</control>
+
+			<control type="group">
+				<width>532</width>
+				<height>926</height>
+
+				<control type="image">
+					<posy>116</posy>
+					<width>810</width>
+					<height>810</height>
+					<texture>$INFO[Window(home).Property(RecommendedEpisode.9.Art(tvshow.characterart)]</texture>
+					<animation type="Conditional" condition="true" reversible="true">
+						<effect type="slide" start="0,0" end="-182,0" time="200" />
+					</animation>
+					<animation type="Conditional" condition="Control.HasFocus(56)" reversible="true">
+						<effect type="slide" start="0,0" end="14,0" time="200" />
+					</animation>
+					<animation type="Conditional" condition="Control.HasFocus(57)" reversible="true">
+						<effect type="slide" start="0,0" end="28,0" time="200" />
+					</animation>
+					<animation type="Conditional" condition="Control.HasFocus(58)" reversible="true">
+						<effect type="slide" start="0,0" end="42,0" time="200" />
+					</animation>
+					<animation type="WindowOpen">
+						<effect type="zoom" center="0,0" start="96" end="100" time="800" />
+					</animation>
+					<animation type="WindowClose">
+						<effect type="zoom" center="0,0" start="100" end="96" time="800" />
+					</animation>
+				</control>
+
+			</control>
+
+		</control>
+
+		<!-- Featured Items -->
+		<control type="grouplist" id="400">
+			<posx>616</posx>
+			<posy>154</posy>
+			<width>8000</width>
+			<height>926</height>
+			<itemgap>8</itemgap>
+			<orientation>horizontal</orientation>
+			<include>WindowFadeAnimation</include>
+			<animation type="Conditional" condition="ControlGroup(400).HasFocus" reversible="true">
+				<effect type="slide" start="0,0" end="-460,0" time="200" />
+			</animation>
+			<animation type="Conditional" condition="Control.HasFocus(51)" reversible="true">
+				<effect type="slide" start="0,0" end="-56,0" time="200" />
+			</animation>
+			<animation type="Conditional" condition="Control.HasFocus(52)" reversible="true">
+				<effect type="slide" start="0,0" end="-112,0" time="200" />
+			</animation>
+			<animation type="Conditional" condition="Control.HasFocus(53)" reversible="true">
+				<effect type="slide" start="0,0" end="-1772,0" time="200" />
+			</animation>
+			<animation type="Conditional" condition="Control.HasFocus(54)" reversible="true">
+				<effect type="slide" start="0,0" end="-1828,0" time="200" />
+			</animation>
+			<animation type="Conditional" condition="Control.HasFocus(55)" reversible="true">
+				<effect type="slide" start="0,0" end="-1884,0" time="200" />
+			</animation>
+			<animation type="Conditional" condition="Control.HasFocus(56)" reversible="true">
+				<effect type="slide" start="0,0" end="-3544,0" time="200" />
+			</animation>
+			<animation type="Conditional" condition="Control.HasFocus(57)" reversible="true">
+				<effect type="slide" start="0,0" end="-3600,0" time="200" />
+			</animation>
+			<animation type="Conditional" condition="Control.HasFocus(58)" reversible="true">
+				<effect type="slide" start="0,0" end="-3656,0" time="200" />
+			</animation>
+
+			<control type="group">
+				<width>532</width>
+				<height>926</height>
+				<visible>!IsEmpty(Window(home).Property(RecommendedEpisode.1.Title))</visible>
+
+				<control type="image">
+					<posy>164</posy>
+					<width>532</width>
+					<height>532</height>
+					<aspectratio aligny="bottom">keep</aspectratio>
+					<texture>$INFO[Window(home).Property(RecommendedEpisode.1.Art(tvshow.clearlogo)]</texture>
+					<visible>!IsEmpty(Window(home).Property(RecommendedEpisode.1.Art(tvshow.characterart))</visible>
+				</control>
+
+				<control type="image">
+					<posy>198</posy>
+					<width>532</width>
+					<height>532</height>
+					<bordersize>6</bordersize>
+					<aspectratio aligny="bottom">keep</aspectratio>
+					<texture>$INFO[Window(home).Property(RecommendedEpisode.1.Art(tvshow.clearart)]</texture>
+					<visible>IsEmpty(Window(home).Property(RecommendedEpisode.1.Art(tvshow.characterart)) | IsEmpty(Window(home).Property(RecommendedEpisode.1.Art(tvshow.clearlogo))</visible>
+				</control>
+
+				<control type="image">
+					<posy>718</posy>
+					<width>532</width>
+					<height>82</height>
+					<bordersize>6</bordersize>
+					<texture>global/Overlay.png</texture>
+				</control>
+
+				<control type="button" id="50">
+					<posy>718</posy>
+					<width>532</width>
+					<height>82</height>
+					<onleft>300</onleft>
+					<onright>51</onright>
+					<texturefocus border="9">global/ItemFO.png</texturefocus>
+					<texturenofocus>-</texturenofocus>
+					<onclick>PlayMedia($ESCINFO[Window(home).Property(RecommendedEpisode.1.File)])</onclick>
+				</control>
+
+			</control>
+
+			<control type="group">
+				<width>532</width>
+				<height>926</height>
+				<visible>!IsEmpty(Window(home).Property(RecommendedEpisode.2.Title))</visible>
+
+				<control type="image">
+					<posy>0</posy>
+					<width>532</width>
+					<height>800</height>
+					<bordersize>6</bordersize>
+					<texture>$INFO[Window(home).Property(RecommendedEpisode.2.Art(tvshow.poster)]</texture>
+				</control>
+
+				<control type="image">
+					<posy>718</posy>
+					<width>532</width>
+					<height>82</height>
+					<bordersize>6</bordersize>
+					<texture>global/Overlay.png</texture>
+				</control>
+
+				<control type="button" id="51">
+					<posy>0</posy>
+					<width>532</width>
+					<height>800</height>
+					<onleft>50</onleft>
+					<onright>52</onright>
+					<texturefocus border="9">global/ItemFO.png</texturefocus>
+					<texturenofocus>-</texturenofocus>
+					<onclick>PlayMedia($ESCINFO[Window(home).Property(RecommendedEpisode.2.File)])</onclick>
+				</control>
+
+			</control>
+
+			<control type="group">
+				<width>532</width>
+				<height>926</height>
+				<visible>!IsEmpty(Window(home).Property(RecommendedEpisode.3.Title))</visible>
+
+				<control type="image">
+					<posy>0</posy>
+					<width>532</width>
+					<height>800</height>
+					<bordersize>6</bordersize>
+					<texture>$INFO[Window(home).Property(RecommendedEpisode.3.Art(tvshow.poster)]</texture>
+				</control>
+
+				<control type="image">
+					<posy>718</posy>
+					<width>532</width>
+					<height>82</height>
+					<bordersize>6</bordersize>
+					<texture>global/Overlay.png</texture>
+				</control>
+
+				<control type="button" id="52">
+					<posy>0</posy>
+					<width>532</width>
+					<height>800</height>
+					<onleft>51</onleft>
+					<onright>53</onright>
+					<texturefocus border="9">global/ItemFO.png</texturefocus>
+					<texturenofocus>-</texturenofocus>
+					<onclick>PlayMedia($ESCINFO[Window(home).Property(RecommendedEpisode.3.File)])</onclick>
+				</control>
+
+			</control>
+
+			<control type="label">
+				<posy>0</posy>
+				<width>144</width>
+				<height>1</height>
+			</control>
+
+			<control type="group">
+				<width>532</width>
+				<height>926</height>
+				<visible>!IsEmpty(Window(home).Property(RecommendedEpisode.4.Title))</visible>
+
+				<control type="image">
+					<posy>0</posy>
+					<width>532</width>
+					<height>800</height>
+					<bordersize>6</bordersize>
+					<texture>$INFO[Window(home).Property(RecommendedEpisode.4.Art(tvshow.poster)]</texture>
+				</control>
+
+				<control type="image">
+					<posy>718</posy>
+					<width>532</width>
+					<height>82</height>
+					<bordersize>6</bordersize>
+					<texture>global/Overlay.png</texture>
+					<onclick>PlayMedia($ESCINFO[Window(home).Property(RecommendedEpisode.4.File)])</onclick>
+				</control>
+
+				<control type="button" id="53">
+					<posy>0</posy>
+					<width>532</width>
+					<height>800</height>
+					<onleft>52</onleft>
+					<onright>54</onright>
+					<texturefocus border="9">global/ItemFO.png</texturefocus>
+					<texturenofocus>-</texturenofocus>
+				</control>
+
+			</control>
+
+			<control type="group">
+				<width>532</width>
+				<height>926</height>
+				<visible>!IsEmpty(Window(home).Property(RecommendedEpisode.5.Title))</visible>
+
+				<control type="image">
+					<posy>164</posy>
+					<width>532</width>
+					<height>532</height>
+					<aspectratio aligny="bottom">keep</aspectratio>
+					<texture>$INFO[Window(home).Property(RecommendedEpisode.5.Art(tvshow.clearlogo)]</texture>
+					<visible>!IsEmpty(Window(home).Property(RecommendedEpisode.5.Art(tvshow.characterart))</visible>
+				</control>
+
+				<control type="image">
+					<posy>198</posy>
+					<width>532</width>
+					<height>532</height>
+					<bordersize>6</bordersize>
+					<aspectratio aligny="bottom">keep</aspectratio>
+					<texture>$INFO[Window(home).Property(RecommendedEpisode.5.Art(tvshow.clearart)]</texture>
+					<visible>IsEmpty(Window(home).Property(RecommendedEpisode.5.Art(tvshow.characterart)) | IsEmpty(Window(home).Property(RecommendedEpisode.5.Art(tvshow.clearlogo))</visible>
+				</control>
+
+				<control type="image">
+					<posy>718</posy>
+					<width>532</width>
+					<height>82</height>
+					<bordersize>6</bordersize>
+					<texture>global/Overlay.png</texture>
+				</control>
+
+				<control type="button" id="54">
+					<posy>718</posy>
+					<width>532</width>
+					<height>82</height>
+					<onleft>53</onleft>
+					<onright>55</onright>
+					<texturefocus border="9">global/ItemFO.png</texturefocus>
+					<texturenofocus>-</texturenofocus>
+					<onclick>PlayMedia($ESCINFO[Window(home).Property(RecommendedEpisode.5.File)])</onclick>
+				</control>
+
+			</control>
+
+			<control type="group">
+				<width>532</width>
+				<height>926</height>
+				<visible>!IsEmpty(Window(home).Property(RecommendedEpisode.6.Title))</visible>
+
+				<control type="image">
+					<posy>0</posy>
+					<width>532</width>
+					<height>800</height>
+					<bordersize>6</bordersize>
+					<texture>$INFO[Window(home).Property(RecommendedEpisode.6.Art(tvshow.poster)]</texture>
+				</control>
+
+				<control type="image">
+					<posy>718</posy>
+					<width>532</width>
+					<height>82</height>
+					<bordersize>6</bordersize>
+					<texture>global/Overlay.png</texture>
+				</control>
+
+				<control type="button" id="55">
+					<posy>0</posy>
+					<width>532</width>
+					<height>800</height>
+					<onleft>54</onleft>
+					<onright>56</onright>
+					<texturefocus border="9">global/ItemFO.png</texturefocus>
+					<texturenofocus>-</texturenofocus>
+					<onclick>PlayMedia($ESCINFO[Window(home).Property(RecommendedEpisode.6.File)])</onclick>
+				</control>
+
+			</control>
+
+			<control type="label">
+				<posy>0</posy>
+				<width>144</width>
+				<height>1</height>
+			</control>
+
+			<control type="group">
+				<width>532</width>
+				<height>926</height>
+				<visible>!IsEmpty(Window(home).Property(RecommendedEpisode.7.Title))</visible>
+
+				<control type="image">
+					<posy>0</posy>
+					<width>532</width>
+					<height>800</height>
+					<bordersize>6</bordersize>
+					<texture>$INFO[Window(home).Property(RecommendedEpisode.7.Art(tvshow.poster)]</texture>
+				</control>
+
+				<control type="image">
+					<posy>718</posy>
+					<width>532</width>
+					<height>82</height>
+					<bordersize>6</bordersize>
+					<texture>global/Overlay.png</texture>
+				</control>
+
+				<control type="button" id="56">
+					<posy>0</posy>
+					<width>532</width>
+					<height>800</height>
+					<onleft>55</onleft>
+					<onright>57</onright>
+					<texturefocus border="9">global/ItemFO.png</texturefocus>
+					<texturenofocus>-</texturenofocus>
+					<onclick>PlayMedia($ESCINFO[Window(home).Property(RecommendedEpisode.7.File)])</onclick>
+				</control>
+
+			</control>
+
+			<control type="group">
+				<width>532</width>
+				<height>926</height>
+				<visible>!IsEmpty(Window(home).Property(RecommendedEpisode.8.Title))</visible>
+
+				<control type="button" id="57">
+					<posy>0</posy>
+					<width>532</width>
+					<height>800</height>
+					<onleft>56</onleft>
+					<onright>58</onright>
+					<texturefocus border="9">global/ItemFO.png</texturefocus>
+					<texturenofocus>-</texturenofocus>
+					<onclick>PlayMedia($ESCINFO[Window(home).Property(RecommendedEpisode.8.File)])</onclick>
+				</control>
+
+				<control type="image">
+					<posy>0</posy>
+					<width>532</width>
+					<height>800</height>
+					<bordersize>6</bordersize>
+					<texture>$INFO[Window(home).Property(RecommendedEpisode.8.Art(tvshow.poster)]</texture>
+				</control>
+
+				<control type="image">
+					<posy>718</posy>
+					<width>532</width>
+					<height>82</height>
+					<bordersize>6</bordersize>
+					<texture>global/Overlay.png</texture>
+				</control>
+
+			</control>
+
+			<control type="group">
+				<width>532</width>
+				<height>926</height>
+				<visible>!IsEmpty(Window(home).Property(RecommendedEpisode.9.Title))</visible>
+
+				<control type="image">
+					<posy>164</posy>
+					<width>532</width>
+					<height>532</height>
+					<aspectratio aligny="bottom">keep</aspectratio>
+					<texture>$INFO[Window(home).Property(RecommendedEpisode.9.Art(tvshow.clearlogo)]</texture>
+					<visible>!IsEmpty(Window(home).Property(RecommendedEpisode.9.Art(tvshow.characterart))</visible>
+				</control>
+
+				<control type="image">
+					<posy>198</posy>
+					<width>532</width>
+					<height>532</height>
+					<bordersize>6</bordersize>
+					<aspectratio aligny="bottom">keep</aspectratio>
+					<texture>$INFO[Window(home).Property(RecommendedEpisode.9.Art(tvshow.clearart)]</texture>
+					<visible>IsEmpty(Window(home).Property(RecommendedEpisode.9.Art(tvshow.characterart)) | IsEmpty(Window(home).Property(RecommendedEpisode.9.Art(tvshow.clearlogo))</visible>
+				</control>
+
+				<control type="image">
+					<posy>718</posy>
+					<width>532</width>
+					<height>82</height>
+					<bordersize>6</bordersize>
+					<texture>global/Overlay.png</texture>
+				</control>
+
+				<control type="button" id="58">
+					<posy>718</posy>
+					<width>532</width>
+					<height>82</height>
+					<onleft>57</onleft>
+					<onright>nooop</onright>
+					<texturefocus border="9">global/ItemFO.png</texturefocus>
+					<texturenofocus>-</texturenofocus>
+					<onclick>PlayMedia($ESCINFO[Window(home).Property(RecommendedEpisode.9.File)])</onclick>
+				</control>
+
+			</control>
+
+		</control>
+
+	</controls>
+
+</window>

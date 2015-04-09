@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window type="dialog" id="52">
+	<!-- Custom Top Bar -->
+	<zorder>0</zorder>	<!-- Set so this dialog is always underneath all other dialogs -->
+	<visible>Window.IsVisible(3000) | Window.IsVisible(fullscreenvideo) | Window.IsVisible(visualisation) | Window.IsVisible(screencalibration) | Window.IsVisible(screensaver) | Window.IsVisible(slideshow)</visible>
+
+	<controls>
+	
+		<!-- Top Diffuse -->
+		<control type="image">
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>MaxWidth</width>
+			<height>202</height>
+			<texture>global/DiffuseVertical.png</texture>
+			<visible>Window.IsVisible(infodialog) | Window.IsVisible(extendedprogressdialog) | Window.IsVisible(mutebug) | Window.IsVisible(volumebar)</visible>
+		</control>
+
+	</controls>
+
+</window>
